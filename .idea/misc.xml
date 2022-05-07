@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/alber/Desktop/Shelted/app/src/main/res/layout/activity_login.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/alber/Desktop/Shelted/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/alber/Desktop/Shelted/app/src/main/res/layout/activity_register.xml" value="0.264" />
         <entry key="..\:/Users/alber/Desktop/Shelted/app/src/main/res/layout/fragment_login.xml" value="0.15625" />
         <entry key="..\:/Users/alber/Desktop/Shelted/app/src/main/res/layout/fragment_register.xml" value="0.13020833333333334" />
       </map>
