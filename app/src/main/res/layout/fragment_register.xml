@@ -19,12 +19,11 @@
         android:id="@+id/scrollView2"
         android:layout_width="299dp"
         android:layout_height="577dp"
-        app:layout_constraintBottom_toTopOf="@+id/regfragment_regbutt"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/imageView3">
 
         <LinearLayout
             android:layout_width="300dp"
@@ -110,76 +109,13 @@
                 android:minHeight="48dp"
                 tools:ignore="SpeakableTextPresentCheck" />
 
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="Date of Birth:" />
+            <Button
+                android:id="@+id/regfragment_regbutt"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:text="Register" />
 
-            <EditText
-                android:id="@+id/editTextDate"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:ems="10"
-                android:inputType="date" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:id="@+id/photo_layout">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/textView7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:text="Profile photo:" />
-
-                    <Button
-                        android:id="@+id/register_butt2"
-                        android:layout_width="120dp"
-                        android:layout_height="48dp"
-                        android:layout_marginTop="50dp"
-                        android:background="@color/botones"
-                        android:text="Select"
-                        tools:layout_editor_absoluteX="90dp" />
-
-                </LinearLayout>
-
-                <ImageButton
-                    android:id="@+id/imageButton"
-                    android:layout_width="110dp"
-                    android:layout_height="117dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="90dp"
-                    tools:srcCompat="@tools:sample/avatars" />
-
-            </LinearLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/regfragment_regbutt"
-                    android:layout_width="120dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="30dp"
-                    android:text="Register"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="MissingConstraints" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </ScrollView>
 
