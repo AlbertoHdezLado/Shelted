@@ -10,7 +10,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class LoggedActivity : AppCompatActivity() {
     private val postListFragment = postListFragment()
     private val favouritesFragment = FavouritesFragment()
-    private val messagesFragment = MessagesFragment()
+    private val messagesFragment = messageListFragment()
     private val profileFragment = ProfileFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
