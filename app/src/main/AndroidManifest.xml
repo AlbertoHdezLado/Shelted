@@ -10,10 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Shelted">
         <activity
-            android:name=".RegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
+            android:name=".Activities.LoggedActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
