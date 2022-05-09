@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/alber/Desktop/Shelted/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/alber/Desktop/Shelted/app/src/main/res/drawable/ic_add.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/alber/Desktop/Shelted/app/src/main/res/drawable/ic_fav_relleno.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/alber/Desktop/Shelted/app/src/main/res/drawable/ic_launcher_background.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/alber/Desktop/Shelted/app/src/main/res/layout/activity_logged.xml" value="0.4" />
         <entry key="..\:/Users/alber/Desktop/Shelted/app/src/main/res/layout/activity_login.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/alber/Desktop/Shelted/app/src/main/res/layout/activity_main.xml" value="0.264" />
