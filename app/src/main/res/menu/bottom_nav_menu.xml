@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/miInicio"
+        android:title="Home"
+        android:icon="@drawable/ic_home" />
+
+    <item android:id="@+id/miFavourites"
+        android:title="Favourites"
+        android:icon="@drawable/fav_paw" />
+
+    <item android:id="@+id/placeholder"
+        android:title="" />
+
+    <item
+        android:id="@+id/miMessages"
+        android:icon="@drawable/ic_message"
+        android:title="Messages" />
+    <item
+        android:id="@+id/miProfile"
+        android:icon="@drawable/ic_perfil"
+        android:title="Profile" />
+</menu>

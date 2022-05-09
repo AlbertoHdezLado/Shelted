@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.android.shelted.LoginFragment"
+        android:name="com.example.android.shelted.Fragments.LoginFragment"
         android:label="LoginFragment" >
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
@@ -14,6 +14,10 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.android.shelted.RegisterFragment"
-        android:label="RegisterFragment" />
+        android:name="com.example.android.shelted.Fragments.RegisterFragment"
+        android:label="RegisterFragment" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment2"
+            app:destination="@id/loginFragment" />
+    </fragment>
 </navigation>
