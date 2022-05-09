@@ -68,7 +68,7 @@
             android:id="@+id/pet_name"
             android:layout_width="123dp"
             android:layout_height="50dp"
-            android:text="Tobi"
+            android:text="Max"
             android:textAlignment="center"
             android:textSize="34sp"
             android:textStyle="bold"
