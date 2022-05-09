@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class LoginFragment : Fragment() {
@@ -18,7 +19,7 @@ class LoginFragment : Fragment() {
 
         // Get the activity and widget
         val context = activity as AppCompatActivity
-        val btnNavigate: Button = v.findViewById(R.id.logfragment_regbutt)
+        val btnNavigate: TextView = v.findViewById(R.id.logfragment_regbutt)
 
         // Replace fragment
         btnNavigate.setOnClickListener {
