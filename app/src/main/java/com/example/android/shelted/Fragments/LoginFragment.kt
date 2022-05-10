@@ -1,13 +1,15 @@
-package com.example.android.shelted
+package com.example.android.shelted.Fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.android.shelted.R
+import com.example.android.shelted.RegisterFragment
+import com.example.android.shelted.replaceFragment
 
 class LoginFragment : Fragment() {
     override fun onCreateView(

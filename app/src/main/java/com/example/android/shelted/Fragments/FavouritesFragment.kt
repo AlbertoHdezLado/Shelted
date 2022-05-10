@@ -11,21 +11,16 @@ import com.example.android.shelted.R
 import com.example.android.shelted.RegisterFragment
 import com.example.android.shelted.replaceFragment
 
-class postListFragment : Fragment() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
+class FavouritesFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
+        savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val v = inflater.inflate(R.layout.fragment_post_list, container, false)
+        val v = inflater.inflate(R.layout.fragment_favourites, container, false)
+
+
 
         return v
     }
-
 }
