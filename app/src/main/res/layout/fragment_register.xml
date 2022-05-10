@@ -18,12 +18,13 @@
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="299dp"
-        android:layout_height="577dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3">
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.13">
 
         <LinearLayout
             android:layout_width="300dp"
@@ -109,17 +110,30 @@
                 android:minHeight="48dp"
                 tools:ignore="SpeakableTextPresentCheck" />
 
-            <Button
-                android:id="@+id/regfragment_regbutt"
-                android:layout_width="120dp"
-                android:layout_height="50dp"
-                android:text="Register" />
+            <Switch
+                android:id="@+id/switch1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="Are you a shelter?" />
 
 
         </LinearLayout>
+
+
     </ScrollView>
 
-
+    <Button
+        android:id="@+id/regfragment_regbutt"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:text="Register"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintVertical_bias="0.25" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
