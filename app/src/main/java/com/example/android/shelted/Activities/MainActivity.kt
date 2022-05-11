@@ -1,8 +1,9 @@
-package com.example.android.shelted
+package com.example.android.shelted.Activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.example.android.shelted.R
 import com.example.android.shelted.Fragments.LoginFragment
 
 class MainActivity : AppCompatActivity() {
@@ -12,16 +13,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Initially display the first fragment in main activity
-        replaceFragment(LoginFragment())
+        val fragmentManager = supportFragmentManager
+        val transaction = fragmentManager.beginTransaction()
+        transaction.replace(R.id.main_activity,LoginFragment())
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
-}
-
-
-// Extension function to replace fragment
-fun AppCompatActivity.replaceFragment(fragment: Fragment){
-    val fragmentManager = supportFragmentManager
-    val transaction = fragmentManager.beginTransaction()
-    transaction.replace(R.id.main_activity,fragment)
-    transaction.addToBackStack(null)
-    transaction.commit()
 }

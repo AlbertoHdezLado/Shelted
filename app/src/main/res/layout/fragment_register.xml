@@ -39,7 +39,7 @@
                 android:text="Username:" />
 
             <EditText
-                android:id="@+id/username2"
+                android:id="@+id/reg_username"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:ems="10"
@@ -55,7 +55,7 @@
                 android:text="E-mail:" />
 
             <EditText
-                android:id="@+id/username3"
+                android:id="@+id/reg_email"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:ems="10"
@@ -71,7 +71,7 @@
                 android:text="Password:" />
 
             <EditText
-                android:id="@+id/password"
+                android:id="@+id/reg_password"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:ems="10"
@@ -87,7 +87,7 @@
                 android:text="Confirm Password:" />
 
             <EditText
-                android:id="@+id/passwordCheck"
+                android:id="@+id/reg_confpassword"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:ems="10"
@@ -103,7 +103,7 @@
                 android:text="Name and Surname(s):" />
 
             <EditText
-                android:id="@+id/username"
+                android:id="@+id/reg_name"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:ems="10"
@@ -134,6 +134,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollView2"
         app:layout_constraintVertical_bias="0.25" />
+
+    <TextView
+        android:id="@+id/regfragment_logbutt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:text="I already have an account!"
+        android:textColor="@android:color/holo_blue_light"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/regfragment_regbutt"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

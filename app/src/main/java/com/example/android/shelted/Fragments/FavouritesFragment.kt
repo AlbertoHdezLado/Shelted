@@ -9,7 +9,6 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.android.shelted.R
 import com.example.android.shelted.RegisterFragment
-import com.example.android.shelted.replaceFragment
 
 class FavouritesFragment : Fragment() {
     override fun onCreateView(

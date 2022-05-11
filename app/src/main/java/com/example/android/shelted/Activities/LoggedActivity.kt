@@ -17,35 +17,46 @@ class LoggedActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_logged)
 
-        replaceFragment(postListFragment())
+        val fragmentManager = supportFragmentManager
+        val transaction = fragmentManager.beginTransaction()
+        transaction.replace(R.id.main_activity,postListFragment())
+        transaction.addToBackStack(null)
+        transaction.commit()
 
         val bottom_navigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottom_navigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.buttonMain -> {
-                    replaceFragment(postListFragment)
+                    val fragmentManager = supportFragmentManager
+                    val transaction = fragmentManager.beginTransaction()
+                    transaction.replace(R.id.main_activity,postListFragment)
+                    transaction.addToBackStack(null)
+                    transaction.commit()
                     true}
                 R.id.buttonFavourites -> {
-                    replaceFragment(favouritesFragment)
+                    val fragmentManager = supportFragmentManager
+                    val transaction = fragmentManager.beginTransaction()
+                    transaction.replace(R.id.main_activity,favouritesFragment)
+                    transaction.addToBackStack(null)
+                    transaction.commit()
                     true}
                 R.id.buttonMessages -> {
-                    replaceFragment(messagesFragment)
+                    val fragmentManager = supportFragmentManager
+                    val transaction = fragmentManager.beginTransaction()
+                    transaction.replace(R.id.main_activity,messagesFragment)
+                    transaction.addToBackStack(null)
+                    transaction.commit()
                     true}
                 R.id.buttonProfile -> {
-                    replaceFragment(profileFragment)
+                    val fragmentManager = supportFragmentManager
+                    val transaction = fragmentManager.beginTransaction()
+                    transaction.replace(R.id.main_activity,profileFragment)
+                    transaction.addToBackStack(null)
+                    transaction.commit()
                     true}
                 else -> false
             }
         }
 
     }
-}
-
-
-// Extension function to replace fragment
-fun AppCompatActivity.replaceFragment(fragment: Fragment){
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.logged_activity, fragment)
-        transaction.addToBackStack(null)
-        transaction.commit()
 }
