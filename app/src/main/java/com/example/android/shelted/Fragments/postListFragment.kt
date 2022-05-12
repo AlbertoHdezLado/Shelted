@@ -9,28 +9,43 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.android.shelted.Classes.Post
 import com.example.android.shelted.R
 import com.example.android.shelted.RecyclerAdapter
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.fragment_post_list.*
 
 class postListFragment : Fragment() {
 
+    //private var layoutManager: RecyclerView.LayoutManager? = null
+    //private var adapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>? = null
+    private lateinit var database: DatabaseReference
+    private lateinit var postRecyclerView: RecyclerView
+    private lateinit var postArrayList: ArrayList<Post>
+
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>? = null
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        val v = inflater.inflate(R.layout.fragment_post_list, container, false)
+        return inflater.inflate(R.layout.fragment_post_list, container, false)
+    }
 
-        //layoutManager = LinearLayoutManager(this)
-        //recyclerView.layoutManager
-        adapter = RecyclerAdapter()
-        //recyclerView.adapter = adapter
-
-
-        return v
+    override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(itemView, savedInstanceState)
+        postListRecyclerView.apply {
+            // set a LinearLayoutManager to handle Android
+            // RecyclerView behavior
+            layoutManager = LinearLayoutManager(activity)
+            // set the custom adapter to the RecyclerView
+            adapter = RecyclerAdapter()
+        }
     }
 
 }
