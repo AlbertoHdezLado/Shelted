@@ -1,11 +1,14 @@
 package com.example.android.shelted.Activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.example.android.shelted.Fragments.*
 import com.example.android.shelted.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class LoggedActivity : AppCompatActivity() {
     private val postListFragment = postListFragment()
@@ -22,8 +25,10 @@ class LoggedActivity : AppCompatActivity() {
         transaction.replace(R.id.logged_activity,postListFragment())
         transaction.addToBackStack(null)
         transaction.commit()
-
+        val button_publicar: FloatingActionButton = findViewById<FloatingActionButton>(R.id.button_publicar)
         val bottom_navigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
+
         bottom_navigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.buttonMain -> {
@@ -56,7 +61,12 @@ class LoggedActivity : AppCompatActivity() {
                     true}
                 else -> false
             }
+
         }
+        button_publicar.setOnClickListener {
+            startActivity(Intent(this, Publish_Activity::class.java))
+        }
+
 
     }
 }

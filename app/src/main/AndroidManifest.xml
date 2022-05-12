@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.android.shelted">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,11 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Shelted">
-
+        <activity
+            android:name=".Activities.Publish_Activity"
+            android:exported="false" />
         <activity
             android:name=".Activities.LoggedActivity"
-            android:exported="false"/>
-
+            android:exported="false" />
         <activity
             android:name=".Activities.MainActivity"
             android:exported="true">
