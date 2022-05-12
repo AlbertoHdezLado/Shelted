@@ -38,9 +38,9 @@ class postListFragment : Fragment() {
         postListRecyclerView.apply {
             // set a LinearLayoutManager to handle Android
             // RecyclerView behavior
-            layoutManager = LinearLayoutManager(activity)
+            //layoutManager = LinearLayoutManager(activity)
             // set the custom adapter to the RecyclerView
-            adapter = RecyclerAdapter()
+            //adapter = RecyclerAdapter()
 
             layoutManager = LinearLayoutManager(requireContext())
             postListRecyclerView.layoutManager
