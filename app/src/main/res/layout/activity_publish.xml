@@ -188,7 +188,7 @@
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <ImageView
-                android:id="@+id/fotosInmueble"
+                android:id="@+id/fotoAnimal"
                 android:layout_width="match_parent"
                 android:layout_height="120dp" />
 
