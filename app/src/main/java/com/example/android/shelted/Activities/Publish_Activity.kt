@@ -2,6 +2,7 @@ package com.example.android.shelted.Activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Window
 import com.example.android.shelted.R
 
 class Publish_Activity : AppCompatActivity() {

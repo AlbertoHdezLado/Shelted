@@ -2,6 +2,7 @@ package com.example.android.shelted.Activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Window
 import androidx.fragment.app.Fragment
 import com.example.android.shelted.Fragments.*
 import com.example.android.shelted.R
