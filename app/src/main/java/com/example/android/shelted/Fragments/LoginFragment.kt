@@ -64,8 +64,7 @@ class LoginFragment : Fragment() {
 
     fun loginUser(emailText: String, passwordText: String){
         auth.signInWithEmailAndPassword(emailText, passwordText)
-        val intent = Intent(MainActivity(), LoggedActivity::class.java)
-        startActivity(intent)
+        startActivity(Intent(this.context, LoggedActivity::class.java))
     }
 
 }
