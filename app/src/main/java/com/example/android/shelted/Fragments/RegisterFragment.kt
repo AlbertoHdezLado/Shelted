@@ -96,7 +96,7 @@ class RegisterFragment : Fragment() {
         val user = User(usernameText, emailText, passwordText, nameText, dateText, shelter.isChecked)
         val rootRef = FirebaseFirestore.getInstance()
         val usersRef = rootRef.collection("users")
-        usersRef.document("user").set(user)
+        usersRef.document(usernameText).set(user)
         val context = activity as AppCompatActivity
         val fragmentManager = context.supportFragmentManager
         val transaction = fragmentManager.beginTransaction()
