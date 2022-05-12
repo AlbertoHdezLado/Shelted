@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.NonNull
 import androidx.appcompat.app.AppCompatActivity
@@ -48,13 +49,13 @@ class RegisterFragment : Fragment() {
         confpassword = v.findViewById(R.id.reg_confpassword)
         name = v.findViewById(R.id.reg_name)
         val regbutton: Button = v.findViewById(R.id.regfragment_regbutt)
-        val logbutton: Button = v.findViewById(R.id.regfragment_logbutt)
+        val logbutton: TextView = v.findViewById(R.id.regfragment_logbutt)
 
         // Initialising auth object
         auth = Firebase.auth
 
         regbutton.setOnClickListener {
-            //signUpUser()
+            signUpUser()
         }
 
         // switching from signUp Activity to Login Activity
@@ -87,6 +88,7 @@ class RegisterFragment : Fragment() {
                 .show()
             return
         }
+
         // If all credential are correct
         // We call createUserWithEmailAndPassword
         // using auth object and pass the
