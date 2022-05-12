@@ -17,8 +17,8 @@ import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.FirebaseDatabase
+//import com.google.firebase.auth.ktx.auth
+//import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 import com.example.android.shelted.Classes.User
 import com.google.firebase.firestore.FirebaseFirestore
@@ -96,7 +96,7 @@ class RegisterFragment : Fragment() {
         val user = User(usernameText, emailText, passwordText, nameText, dateText, shelter.isChecked)
         val rootRef = FirebaseFirestore.getInstance()
         val usersRef = rootRef.collection("users")
-        usersRef.document("user").set(user)
+        usersRef.document(usernameText).set(user)
         val context = activity as AppCompatActivity
         val fragmentManager = context.supportFragmentManager
         val transaction = fragmentManager.beginTransaction()
