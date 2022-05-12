@@ -28,10 +28,7 @@ class postListFragment : Fragment() {
         // Inflate the layout for this fragment
 
 
-        layoutManager = LinearLayoutManager(requireContext())
-        postListRecyclerView.layoutManager
-        adapter = RecyclerAdapter()
-        postListRecyclerView.adapter = adapter
+
 
         return inflater.inflate(R.layout.fragment_post_list, container, false)
     }
@@ -44,6 +41,11 @@ class postListFragment : Fragment() {
             layoutManager = LinearLayoutManager(activity)
             // set the custom adapter to the RecyclerView
             adapter = RecyclerAdapter()
+
+            layoutManager = LinearLayoutManager(requireContext())
+            postListRecyclerView.layoutManager
+            adapter = RecyclerAdapter()
+            postListRecyclerView.adapter = adapter
         }
     }
 
