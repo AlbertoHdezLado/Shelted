@@ -12,28 +12,27 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.android.shelted.Classes.Post
 import com.example.android.shelted.R
 import com.example.android.shelted.RecyclerAdapter
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_post_list.*
 
 class postListFragment : Fragment() {
 
-    //private var layoutManager: RecyclerView.LayoutManager? = null
-    //private var adapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>? = null
-    private lateinit var database: DatabaseReference
     private lateinit var postRecyclerView: RecyclerView
     private lateinit var postArrayList: ArrayList<Post>
-
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>? = null
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
+
+
+        layoutManager = LinearLayoutManager(requireContext())
+        postListRecyclerView.layoutManager
+        adapter = RecyclerAdapter()
+        postListRecyclerView.adapter = adapter
+
         return inflater.inflate(R.layout.fragment_post_list, container, false)
     }
 
@@ -47,5 +46,6 @@ class postListFragment : Fragment() {
             adapter = RecyclerAdapter()
         }
     }
+
 
 }
