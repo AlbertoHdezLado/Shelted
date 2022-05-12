@@ -41,12 +41,12 @@
     </com.google.android.material.bottomappbar.BottomAppBar>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/add_post"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="-50dp"
-        android:src="@drawable/ic_add"
+        android:src="@android:drawable/ic_input_add"
         app:layout_anchor="@id/bottomAppBar"
         app:layout_constraintBottom_toTopOf="@+id/bottomAppBar"
         app:layout_constraintEnd_toEndOf="parent"

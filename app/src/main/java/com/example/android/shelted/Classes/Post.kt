@@ -11,5 +11,6 @@ data class Post(
     var city: String = "",
     var cp: String = "",
     var desciption:String,
-    var mainImg:Image) {
+    var mainImg:String = "",
+    var path: String = "") {
 }

@@ -193,7 +193,7 @@
                 android:layout_height="120dp" />
 
             <Button
-                android:id="@+id/registrarButton"
+                android:id="@+id/publishButton"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginRight="0dp"
