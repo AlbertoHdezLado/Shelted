@@ -40,7 +40,6 @@ class RegisterFragment : Fragment() {
         // Inflate the layout for this fragment
         val v = inflater.inflate(R.layout.fragment_register, container, false)
 
-
         // View Bindings
         val context = activity as AppCompatActivity
         username = v.findViewById(R.id.reg_username)
@@ -54,7 +53,7 @@ class RegisterFragment : Fragment() {
         val logbutton: TextView = v.findViewById(R.id.regfragment_logbutt)
 
         // Initialising auth object
-        auth = Firebase.auth
+        auth = FirebaseAuth.getInstance()
 
         regbutton.setOnClickListener {
             signUpUser()
