@@ -19,7 +19,7 @@ class LoggedActivity : AppCompatActivity() {
 
         val fragmentManager = supportFragmentManager
         val transaction = fragmentManager.beginTransaction()
-        transaction.replace(R.id.main_activity,postListFragment())
+        transaction.replace(R.id.logged_activity,postListFragment())
         transaction.addToBackStack(null)
         transaction.commit()
 
@@ -29,28 +29,28 @@ class LoggedActivity : AppCompatActivity() {
                 R.id.buttonMain -> {
                     val fragmentManager = supportFragmentManager
                     val transaction = fragmentManager.beginTransaction()
-                    transaction.replace(R.id.logged_activity,postListFragment())
+                    transaction.replace(R.id.logged_activity,postListFragment)
                     transaction.addToBackStack(null)
                     transaction.commit()
                     true}
                 R.id.buttonFavourites -> {
                     val fragmentManager = supportFragmentManager
                     val transaction = fragmentManager.beginTransaction()
-                    transaction.replace(R.id.main_activity,favouritesFragment)
+                    transaction.replace(R.id.logged_activity,favouritesFragment)
                     transaction.addToBackStack(null)
                     transaction.commit()
                     true}
                 R.id.buttonMessages -> {
                     val fragmentManager = supportFragmentManager
                     val transaction = fragmentManager.beginTransaction()
-                    transaction.replace(R.id.main_activity,messagesFragment)
+                    transaction.replace(R.id.logged_activity,messagesFragment)
                     transaction.addToBackStack(null)
                     transaction.commit()
                     true}
                 R.id.buttonProfile -> {
                     val fragmentManager = supportFragmentManager
                     val transaction = fragmentManager.beginTransaction()
-                    transaction.replace(R.id.main_activity,profileFragment)
+                    transaction.replace(R.id.logged_activity,profileFragment)
                     transaction.addToBackStack(null)
                     transaction.commit()
                     true}

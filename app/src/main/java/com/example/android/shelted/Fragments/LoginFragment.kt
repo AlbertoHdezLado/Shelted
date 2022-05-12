@@ -45,7 +45,9 @@ class LoginFragment : Fragment() {
             if (TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)) {
                 Toast.makeText(activity, "Empty Credentials!", Toast.LENGTH_SHORT).show()
             } else {
-                loginUser(txt_email, txt_password)
+                auth.signInWithEmailAndPassword(txt_email, txt_password)
+                //MainActivity().changeActivity()
+                startActivity(Intent(activity, LoggedActivity::class.java))
             }
         }
 
@@ -61,11 +63,5 @@ class LoginFragment : Fragment() {
 
         return v
     }
-
-    fun loginUser(emailText: String, passwordText: String){
-        auth.signInWithEmailAndPassword(emailText, passwordText)
-        startActivity(Intent(this.context, LoggedActivity::class.java))
-    }
-
 }
 
