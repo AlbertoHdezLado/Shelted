@@ -15,6 +15,7 @@ import com.example.android.shelted.RecyclerAdapter
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.fragment_post_list.*
 
 class postListFragment : Fragment() {
 
@@ -24,20 +25,27 @@ class postListFragment : Fragment() {
     private lateinit var postRecyclerView: RecyclerView
     private lateinit var postArrayList: ArrayList<Post>
 
+    private var layoutManager: RecyclerView.LayoutManager? = null
+    private var adapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>? = null
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        val v = inflater.inflate(R.layout.fragment_post_list, container, false)
+        return inflater.inflate(R.layout.fragment_post_list, container, false)
+    }
 
-        postRecyclerView = v.findViewById(R.id.postListRecyclerView)
-
-
-
-
-        return v
+    override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(itemView, savedInstanceState)
+        postListRecyclerView.apply {
+            // set a LinearLayoutManager to handle Android
+            // RecyclerView behavior
+            layoutManager = LinearLayoutManager(activity)
+            // set the custom adapter to the RecyclerView
+            adapter = RecyclerAdapter()
+        }
     }
 
 }
