@@ -19,6 +19,8 @@ import android.content.Intent
 import com.example.android.shelted.Activities.LoggedActivity
 
 import com.example.android.shelted.Activities.MainActivity
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.auth.AuthResult
 
 val auth: FirebaseAuth = FirebaseAuth.getInstance()
 
@@ -45,9 +47,16 @@ class LoginFragment : Fragment() {
             if (TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)) {
                 Toast.makeText(activity, "Empty Credentials!", Toast.LENGTH_SHORT).show()
             } else {
-                auth.signInWithEmailAndPassword(txt_email, txt_password)
-                //MainActivity().changeActivity()
-                startActivity(Intent(activity, LoggedActivity::class.java))
+                auth.signInWithEmailAndPassword(txt_email, txt_password).addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        Toast.makeText(activity, "Successful login!", Toast.LENGTH_SHORT).show()
+                        startActivity(Intent(activity, LoggedActivity::class.java))
+                    } else {
+                        Toast.makeText(activity,
+                            "Your email or password doesn't exist!",
+                            Toast.LENGTH_SHORT).show()
+                    }
+                }
             }
         }
 

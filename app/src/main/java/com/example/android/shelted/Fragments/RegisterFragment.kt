@@ -1,6 +1,7 @@
 package com.example.android.shelted
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -92,16 +93,28 @@ class RegisterFragment : Fragment() {
             return
         }
 
-        auth.createUserWithEmailAndPassword(emailText, passwordText)
-        val user = User(usernameText, emailText, passwordText, nameText, dateText, shelter.isChecked)
-        val rootRef = FirebaseFirestore.getInstance()
-        val usersRef = rootRef.collection("users")
-        usersRef.document(usernameText).set(user)
-        val context = activity as AppCompatActivity
-        val fragmentManager = context.supportFragmentManager
-        val transaction = fragmentManager.beginTransaction()
-        transaction.replace(R.id.main_activity,LoginFragment())
-        transaction.addToBackStack(null)
-        transaction.commit()
+        auth.createUserWithEmailAndPassword(emailText, passwordText).addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                Toast.makeText(activity, "Successful login!", Toast.LENGTH_SHORT).show()
+
+                //Save user data in firebase
+                val user = User(usernameText, emailText, passwordText, nameText, dateText, shelter.isChecked)
+                val rootRef = FirebaseFirestore.getInstance()
+                val usersRef = rootRef.collection("users")
+                usersRef.document(usernameText).set(user)
+
+                //Change fragment to login
+                val context = activity as AppCompatActivity
+                val fragmentManager = context.supportFragmentManager
+                val transaction = fragmentManager.beginTransaction()
+                transaction.replace(R.id.main_activity,LoginFragment())
+                transaction.addToBackStack(null)
+                transaction.commit()
+            } else {
+                Toast.makeText(activity,
+                    "Your email is already registered!",
+                    Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }

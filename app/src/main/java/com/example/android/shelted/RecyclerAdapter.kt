@@ -30,7 +30,7 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
             itemView.setOnClickListener{
                 //val position: Int = adapterPosition
-                val position: Int = bindingAdapterPosition
+                //val position: Int = bindingAdapterPosition
 
                 Toast.makeText(itemView.context, "you clicked on ${titles[position]}", Toast.LENGTH_LONG).show()
             }
