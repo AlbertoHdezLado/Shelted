@@ -29,7 +29,7 @@ class LoggedActivity : AppCompatActivity() {
                 R.id.buttonMain -> {
                     val fragmentManager = supportFragmentManager
                     val transaction = fragmentManager.beginTransaction()
-                    transaction.replace(R.id.main_activity,postListFragment)
+                    transaction.replace(R.id.logged_activity,postListFragment())
                     transaction.addToBackStack(null)
                     transaction.commit()
                     true}

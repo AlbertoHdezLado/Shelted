@@ -21,8 +21,6 @@ import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 
 class RegisterFragment : Fragment() {
@@ -49,10 +47,10 @@ class RegisterFragment : Fragment() {
         confpassword = v.findViewById(R.id.reg_confpassword)
         name = v.findViewById(R.id.reg_name)
         val regbutton: Button = v.findViewById(R.id.regfragment_regbutt)
-        val logbutton: TextView = v.findViewById(R.id.regfragment_logbutt)
+        val logbutton: Button = v.findViewById(R.id.regfragment_logbutt)
 
         // Initialising auth object
-        auth = Firebase.auth
+        auth = FirebaseAuth.getInstance()
 
         regbutton.setOnClickListener {
             signUpUser()
