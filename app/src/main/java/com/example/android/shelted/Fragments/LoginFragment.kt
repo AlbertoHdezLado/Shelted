@@ -14,15 +14,11 @@ import android.widget.Toast
 import android.text.TextUtils
 
 import android.widget.EditText
-import androidx.annotation.NonNull
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.android.gms.tasks.Task
-import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import android.content.Intent
+import com.example.android.shelted.Activities.LoggedActivity
 
 import com.example.android.shelted.Activities.MainActivity
-import com.google.android.gms.tasks.OnFailureListener
 
 val auth: FirebaseAuth = FirebaseAuth.getInstance()
 
@@ -51,12 +47,8 @@ class LoginFragment : Fragment() {
             } else {
                 loginUser(txt_email, txt_password)
             }
-            val fragmentManager = context.supportFragmentManager
-            val transaction = fragmentManager.beginTransaction()
-            transaction.replace(R.id.main_activity,RegisterFragment())
-            transaction.addToBackStack(null)
-            transaction.commit()
         }
+
 
         // Replace fragment
         regButton.setOnClickListener {
@@ -70,24 +62,11 @@ class LoginFragment : Fragment() {
         return v
     }
 
-    fun loginUser(email: String, password: String){
-        auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(
-            OnCompleteListener<AuthResult>() {
-                @Override
-                fun onComplete(@NonNull task: Task<AuthResult> ) {
-                    if (task.isSuccessful) {
-                        Toast.makeText(activity, "Update the profile " +
-                                "for better expereince", Toast.LENGTH_SHORT).show()
-                        val intent = Intent(activity, MainActivity::class.java)
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
-                        startActivity(intent)
-                    }
-                }
-            }).addOnFailureListener(OnFailureListener() {
-            @Override
-            fun onFailure(@NonNull e: Exception) {
-                Toast.makeText(activity, e.message, Toast.LENGTH_SHORT).show();
-            }
-        });
+    fun loginUser(emailText: String, passwordText: String){
+        auth.signInWithEmailAndPassword(emailText, passwordText)
+        val intent = Intent(MainActivity(), LoggedActivity::class.java)
+        startActivity(intent)
     }
+
 }
+
