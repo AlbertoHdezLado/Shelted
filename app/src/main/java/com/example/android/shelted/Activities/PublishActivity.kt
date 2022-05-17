@@ -20,7 +20,7 @@ import kotlinx.android.synthetic.main.activity_publish.*
 import java.util.*
 import com.google.firebase.storage.StorageReference
 
-class Publish_Activity : AppCompatActivity() {
+class PublishActivity : AppCompatActivity() {
 
 
     var PICK_IMAGE_MULTIPLE = 1
@@ -81,11 +81,11 @@ class Publish_Activity : AppCompatActivity() {
             newPost.cp = post_postalCode.text.toString().trim()
             newPost.desciption = post_description.text.toString().trim()
 
-            db.collection("Publicaciones").document(post_name.text.toString().trim()).set(newPost)
+            db.collection("posts").document(post_name.text.toString().trim()).set(newPost)
                 .addOnSuccessListener { Log.d(ContentValues.TAG, "DocumentSnapshot successfully written!") }
                 .addOnFailureListener { e -> Log.w(ContentValues.TAG, "Error writing document", e) }
 
-            volverInicio()
+            //volverInicio()
         }
     }
 

@@ -62,7 +62,7 @@ class LoggedActivity : AppCompatActivity() {
         }
 
         add_post.setOnClickListener {
-            startActivity(Intent(this,Publish_Activity::class.java ))
+            startActivity(Intent(this,PublishActivity::class.java ))
         }
 
     }

@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Shelted">
         <activity
-            android:name=".Activities.Publish_Activity"
+            android:name=".Activities.PublishActivity"
             android:exported="false" />
         <activity
             android:name=".Activities.LoggedActivity"
