@@ -84,19 +84,11 @@ class PublishActivity : AppCompatActivity() {
             db.collection("posts").document(post_name.text.toString().trim()).set(newPost)
                 .addOnSuccessListener { Log.d(ContentValues.TAG, "DocumentSnapshot successfully written!") }
                 .addOnFailureListener { e -> Log.w(ContentValues.TAG, "Error writing document", e) }
-
-            //volverInicio()
         }
     }
 
     private fun botonInicio() {
-        inicioButton.setOnClickListener {volverInicio()}
-    }
-
-    private fun volverInicio() {
-        val homeIntent: Intent = Intent(this, logged_activity::class.java)
-
-        startActivity(homeIntent)
+        inicioButton.setOnClickListener {finish()}
     }
 
 
