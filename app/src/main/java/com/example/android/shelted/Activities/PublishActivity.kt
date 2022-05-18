@@ -27,7 +27,7 @@ class PublishActivity : AppCompatActivity() {
     var imageEncoded: Uri? = null
     var imagePicker: ImageView? = null
     val db =  Firebase.firestore
-    var newPost: Post = Post("",0,"","","","","","","")
+    var newPost: Post = Post("","",0,"","","","","","","")
 
     val optionsAnimal = arrayOf("Dog", "Cat", "Rabbit", "Bird")
 
@@ -73,6 +73,8 @@ class PublishActivity : AppCompatActivity() {
                     }
             }
 
+            val document = db.collection("posts").document()
+            newPost.id = document.id
             newPost.name = post_name.text.toString().trim()
             newPost.age = post_age.text.toString().toInt()
             newPost.kind = spinner_TipoAnimal.selectedItem.toString().trim()
@@ -81,9 +83,10 @@ class PublishActivity : AppCompatActivity() {
             newPost.cp = post_postalCode.text.toString().trim()
             newPost.desciption = post_description.text.toString().trim()
 
-            db.collection("posts").document(post_name.text.toString().trim()).set(newPost)
-                .addOnSuccessListener { Log.d(ContentValues.TAG, "DocumentSnapshot successfully written!") }
-                .addOnFailureListener { e -> Log.w(ContentValues.TAG, "Error writing document", e) }
+            val handle = document.set(newPost)
+
+            handle.addOnSuccessListener { Log.d("Firebase", "Document saved") }
+            handle.addOnFailureListener { Log.e("Firebase", "Error writing document $it") }
         }
     }
 

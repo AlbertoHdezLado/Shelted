@@ -1,16 +1,20 @@
 package com.example.android.shelted.Classes
 
-import android.location.Location
-import android.media.Image
+import com.google.firebase.firestore.IgnoreExtraProperties
 
-data class Post(
-    var name:String = "",
-    var age:Int = 0,
-    var kind:String = "",
-    var country: String = "",
-    var city: String = "",
-    var cp: String = "",
-    var desciption:String,
-    var mainImg:String = "",
-    var path: String = "") {
-}
+
+@IgnoreExtraProperties
+class Post(
+    var id:String ?= null,
+    var name:String ?= null,
+    var age:Int ?= null,
+    var kind:String ?= null,
+    var country: String ?= null,
+    var city: String ?= null,
+    var cp: String ?= null,
+    var desciption:String ?= null,
+    var mainImg:String ?= null,
+    var path: String ?= null)
+
+
+
