@@ -23,10 +23,5 @@ class MainActivity : AppCompatActivity() {
         transaction.replace(R.id.main_activity,LoginFragment())
         transaction.addToBackStack(null)
         transaction.commit()
-
-
-
-
-
     }
 }

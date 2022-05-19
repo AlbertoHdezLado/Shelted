@@ -32,6 +32,18 @@ class LoggedActivity : AppCompatActivity() {
         val bottom_navigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottom_navigation.background = null
 
+        barra_inferior()
+        publish()
+    }
+
+    private fun publish(){
+        publicar_button.setOnClickListener {
+            val intent = Intent(this, PublishActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+    private fun barra_inferior(){
         bottom_navigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.buttonMain -> {
