@@ -58,6 +58,7 @@ dependencies {
 
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
     implementation 'com.google.firebase:firebase-storage-ktx:20.0.1'
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
 
     testImplementation 'junit:junit:'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
