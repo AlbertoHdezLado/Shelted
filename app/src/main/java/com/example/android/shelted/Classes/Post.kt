@@ -15,7 +15,7 @@ class Post(
     var description:String ?= null,
     var mainImg:String ?= null,
     var path: String ?= null,
-    var shelter: String
+    var shelter: String ?= null
 )
 
 
