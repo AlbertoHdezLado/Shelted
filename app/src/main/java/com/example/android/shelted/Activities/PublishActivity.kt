@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.Toast
 import com.example.android.shelted.Classes.Post
+import com.example.android.shelted.Fragments.auth
 import com.example.android.shelted.R
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -52,23 +53,6 @@ class PublishActivity : AppCompatActivity() {
 
     private fun uploadPublish() {
         publishButton.setOnClickListener {
-            val user = FirebaseAuth.getInstance().currentUser
-            user?.let {
-                // Name, email address, and profile photo Url
-                val name = user.displayName
-                val email = user.email
-                val photoUrl = user.photoUrl
-
-                // Check if user's email is verified
-                val emailVerified = user.isEmailVerified
-
-                // The user's ID, unique to the Firebase project. Do NOT use this value to
-                // authenticate with your backend server, if you have one. Use
-                // FirebaseUser.getToken() instead.
-                val uid = user.uid
-                println("$name $email $photoUrl $emailVerified $uid")
-            }
-
             var path = UUID.randomUUID().toString()
 
             var imgRef: StorageReference =  FirebaseStorage.getInstance().reference.child(path)
@@ -107,12 +91,12 @@ class PublishActivity : AppCompatActivity() {
             newPost.city = post_city.text.toString().trim()
             newPost.cp = post_postalCode.text.toString().trim()
             newPost.description = post_description.text.toString().trim()
-            newPost.shelter
+            val user = FirebaseAuth.getInstance().currentUser
+            user?.let {
+                // Name, email address, and profile photo Url
+                newPost.shelter = user.email.toString()
+            }
 
-            val imgURL = "https://firebasestorage.googleapis.com/v0/b/shelted-ffe38.appspot.com/o/" +
-                            path + "?alt=media&token=760ecd94-5cd2-4e02-ad8c-d0d92d337666"
-
-            newPost.mainImg = imgURL
 
             val handle = document.set(newPost)
 
