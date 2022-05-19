@@ -105,7 +105,7 @@ class PublishActivity : AppCompatActivity() {
 
             handle.addOnSuccessListener { Log.d("Firebase", "Document saved") }
             handle.addOnFailureListener { Log.e("Firebase", "Error writing document $it") }
-            finish()
+            startActivity(Intent(this, LoggedActivity::class.java))
         }
 
     }

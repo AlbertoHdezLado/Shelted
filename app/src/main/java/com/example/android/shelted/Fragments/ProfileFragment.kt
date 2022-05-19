@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.text.set
 import com.example.android.shelted.R
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
@@ -26,9 +27,9 @@ class ProfileFragment : Fragment() {
         val v = inflater.inflate(R.layout.fragment_profile, container, false)
         val query : Query = collectionReference
 
-        //val email = auth.currentUser!!.email
+        val email = FirebaseAuth.getInstance().currentUser!!.email
 
-        //prof_email.text = email
+        prof_email.text = email
 
 
         return v
