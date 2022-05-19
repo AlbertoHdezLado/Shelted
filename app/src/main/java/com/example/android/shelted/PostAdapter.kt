@@ -1,5 +1,6 @@
 package com.example.android.shelted
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -22,12 +23,16 @@ class PostAdapter(options: FirestoreRecyclerOptions<Post>) :
 
     override fun onBindViewHolder(holder: PostAdapterVH, position: Int, model: Post) {
         holder.itemTitle.text = model.name
-        holder.itemDetail.text = model.description
+        holder.itemAge.text = model.age.toString()
+        holder.itemDescription.text = model.description
+        holder.itemLocation.text = "${model.city}, ${model.country}"
     }
 
     class PostAdapterVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var itemTitle = itemView.item_title
-        var itemDetail = itemView.item_detail
+        var itemAge = itemView.item_age
+        var itemDescription = itemView.item_description
+        var itemLocation = itemView.item_location
     }
 
 
