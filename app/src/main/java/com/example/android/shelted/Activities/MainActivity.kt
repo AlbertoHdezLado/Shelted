@@ -2,12 +2,8 @@ package com.example.android.shelted.Activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.android.shelted.R
 import com.example.android.shelted.Fragments.LoginFragment
-import com.example.android.shelted.RecyclerAdapter
 
 class MainActivity : AppCompatActivity() {
 

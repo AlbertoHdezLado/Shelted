@@ -81,13 +81,15 @@ class PublishActivity : AppCompatActivity() {
             newPost.country = post_country.text.toString().trim()
             newPost.city = post_city.text.toString().trim()
             newPost.cp = post_postalCode.text.toString().trim()
-            newPost.desciption = post_description.text.toString().trim()
+            newPost.description = post_description.text.toString().trim()
 
             val handle = document.set(newPost)
 
             handle.addOnSuccessListener { Log.d("Firebase", "Document saved") }
             handle.addOnFailureListener { Log.e("Firebase", "Error writing document $it") }
+            finish()
         }
+
     }
 
     private fun botonInicio() {

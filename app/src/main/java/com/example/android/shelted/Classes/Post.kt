@@ -12,7 +12,7 @@ class Post(
     var country: String ?= null,
     var city: String ?= null,
     var cp: String ?= null,
-    var desciption:String ?= null,
+    var description:String ?= null,
     var mainImg:String ?= null,
     var path: String ?= null)
 
