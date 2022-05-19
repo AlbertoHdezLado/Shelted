@@ -27,7 +27,7 @@ class PublishActivity : AppCompatActivity() {
     var imageEncoded: Uri? = null
     var imagePicker: ImageView? = null
     val db =  Firebase.firestore
-    var newPost: Post = Post("","",0,"","","","","","","")
+    var newPost: Post = Post("","",0,"","","","","","","", "")
 
     val optionsAnimal = arrayOf("Dog", "Cat", "Rabbit", "Bird")
 
@@ -82,6 +82,7 @@ class PublishActivity : AppCompatActivity() {
             newPost.city = post_city.text.toString().trim()
             newPost.cp = post_postalCode.text.toString().trim()
             newPost.description = post_description.text.toString().trim()
+            newPost.shelter
 
             val handle = document.set(newPost)
 
