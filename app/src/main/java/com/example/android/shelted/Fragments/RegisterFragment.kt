@@ -25,7 +25,6 @@ import com.example.android.shelted.Classes.User
 import com.google.firebase.firestore.FirebaseFirestore
 
 class RegisterFragment : Fragment() {
-    lateinit var username: EditText
     lateinit var email: EditText
     private lateinit var password: EditText
     private lateinit var confpassword: EditText
@@ -43,7 +42,6 @@ class RegisterFragment : Fragment() {
 
         // View Bindings
         val context = activity as AppCompatActivity
-        username = v.findViewById(R.id.reg_username)
         email = v.findViewById(R.id.reg_email)
         password = v.findViewById(R.id.reg_password)
         confpassword = v.findViewById(R.id.reg_confpassword)
@@ -72,9 +70,7 @@ class RegisterFragment : Fragment() {
         return v
     }
 
-    @SuppressLint("RestrictedApi")
     private fun signUpUser() {
-        val usernameText = username.text.toString()
         val emailText = email.text.toString()
         val passwordText = password.text.toString()
         val confpasswordText = confpassword.text.toString()
@@ -82,8 +78,8 @@ class RegisterFragment : Fragment() {
         val dateText = date.text.toString()
 
         // check pass
-        if (usernameText.isBlank() || emailText.isBlank() || passwordText.isBlank() || confpasswordText.isBlank() || nameText.isBlank() || dateText.isBlank()) {
-            Toast.makeText(activity, "Email and Password can't be blank", Toast.LENGTH_SHORT).show()
+        if (emailText.isBlank() || passwordText.isBlank() || confpasswordText.isBlank() || nameText.isBlank() || dateText.isBlank()) {
+            Toast.makeText(activity, "Data can't be blank", Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -98,10 +94,10 @@ class RegisterFragment : Fragment() {
                 Toast.makeText(activity, "Successful login!", Toast.LENGTH_SHORT).show()
 
                 //Save user data in firebase
-                val user = User(usernameText, emailText, passwordText, nameText, dateText, shelter.isChecked)
+                val user = User(emailText, passwordText, nameText, dateText, shelter.isChecked)
                 val rootRef = FirebaseFirestore.getInstance()
                 val usersRef = rootRef.collection("users")
-                usersRef.document(usernameText).set(user)
+                usersRef.document(emailText).set(user)
 
                 //Change fragment to login
                 val context = activity as AppCompatActivity

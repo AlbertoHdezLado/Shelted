@@ -5,7 +5,6 @@ import android.provider.ContactsContract
 import android.security.identity.AccessControlProfile
 
 data class User(
-    var username: String ?= null,
     var email: String ?= null,
     var pass:String ?= null,
     var name: String ?= null,

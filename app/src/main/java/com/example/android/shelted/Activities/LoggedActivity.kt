@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Window
+import androidx.appcompat.app.ActionBar
 import androidx.fragment.app.Fragment
 import com.example.android.shelted.Fragments.*
 import com.example.android.shelted.R
@@ -18,6 +19,8 @@ class LoggedActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val actionBar: ActionBar? = supportActionBar
+        actionBar!!.hide()
         setContentView(R.layout.activity_logged)
 
         val fragmentManager = supportFragmentManager
@@ -27,6 +30,8 @@ class LoggedActivity : AppCompatActivity() {
         transaction.commit()
 
         val bottom_navigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottom_navigation.background = null
+
         bottom_navigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.buttonMain -> {
@@ -61,9 +66,9 @@ class LoggedActivity : AppCompatActivity() {
             }
         }
 
-        add_post.setOnClickListener {
+        /*add_post.setOnClickListener {
             startActivity(Intent(this,PublishActivity::class.java ))
-        }
+        }*/
 
     }
 }

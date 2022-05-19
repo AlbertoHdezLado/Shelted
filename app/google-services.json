@@ -1,34 +1,33 @@
 {
   "project_info": {
-    "project_number": "271411889076",
-    "firebase_url": "https://shelted-ffe38-default-rtdb.europe-west1.firebasedatabase.app",
-    "project_id": "shelted-ffe38",
-    "storage_bucket": "shelted-ffe38.appspot.com"
+    "project_number": "161731552249",
+    "project_id": "shelted-d5576",
+    "storage_bucket": "shelted-d5576.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:271411889076:android:1d0d75c2d70f64f80a68e1",
+        "mobilesdk_app_id": "1:161731552249:android:7789baf0cb812b5d491328",
         "android_client_info": {
           "package_name": "com.example.android.shelted"
         }
       },
       "oauth_client": [
         {
-          "client_id": "271411889076-s29qiv07auit8e0mjv0j4eudv0hckp05.apps.googleusercontent.com",
+          "client_id": "161731552249-3a363tm0t67q4gkvqjmpmq35b493nvp2.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAoi9dxJDSbHSlZjy02z9kzbuJ8UvpEXdw"
+          "current_key": "AIzaSyDTYDD9IoZ0kN2nAG4OyM8A-983-c5OxZs"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "271411889076-s29qiv07auit8e0mjv0j4eudv0hckp05.apps.googleusercontent.com",
+              "client_id": "161731552249-3a363tm0t67q4gkvqjmpmq35b493nvp2.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
