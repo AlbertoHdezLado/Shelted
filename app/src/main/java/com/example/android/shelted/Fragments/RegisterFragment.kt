@@ -1,7 +1,5 @@
 package com.example.android.shelted
 
-import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,18 +7,10 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.android.shelted.Activities.LoggedActivity
-import com.example.android.shelted.Activities.MainActivity
 import com.example.android.shelted.Fragments.LoginFragment
-import com.example.android.shelted.Fragments.auth
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.android.gms.tasks.OnFailureListener
-import com.google.android.gms.tasks.Task
-import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 //import com.google.firebase.auth.ktx.auth
 //import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.ktx.Firebase
 import com.example.android.shelted.Classes.User
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -42,12 +32,12 @@ class RegisterFragment : Fragment() {
 
         // View Bindings
         val context = activity as AppCompatActivity
-        email = v.findViewById(R.id.reg_email)
-        password = v.findViewById(R.id.reg_password)
+        email = v.findViewById(R.id.prof_email)
+        password = v.findViewById(R.id.prof_password)
         confpassword = v.findViewById(R.id.reg_confpassword)
-        name = v.findViewById(R.id.reg_name)
-        date = v.findViewById(R.id.reg_date)
-        shelter = v.findViewById(R.id.reg_shelter)
+        name = v.findViewById(R.id.prof_name)
+        date = v.findViewById(R.id.prof_date)
+        shelter = v.findViewById(R.id.prof_shelter)
         val regbutton: Button = v.findViewById(R.id.regfragment_regbutt)
         val logbutton: TextView = v.findViewById(R.id.regfragment_logbutt)
 

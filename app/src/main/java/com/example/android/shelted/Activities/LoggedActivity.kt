@@ -66,9 +66,9 @@ class LoggedActivity : AppCompatActivity() {
             }
         }
 
-        /*add_post.setOnClickListener {
+        publicar_button.setOnClickListener {
             startActivity(Intent(this,PublishActivity::class.java ))
-        }*/
+        }
 
     }
 }
