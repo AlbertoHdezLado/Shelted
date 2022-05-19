@@ -1,5 +1,6 @@
 package com.example.android.shelted.Activities
 
+import android.app.Activity
 import android.app.ProgressDialog
 import android.content.ContentValues
 import android.content.Intent
@@ -68,12 +69,13 @@ class PublishActivity : AppCompatActivity() {
                 println("$name $email $photoUrl $emailVerified $uid")
             }
 
+            var path = UUID.randomUUID().toString()
+
+            var imgRef: StorageReference =  FirebaseStorage.getInstance().reference.child(path)
             if (imageEncoded != null) {
                 var pd = ProgressDialog(this)
                 pd.setTitle("Uploading image")
                 pd.show()
-                var path = UUID.randomUUID().toString()
-                var imgRef: StorageReference =  FirebaseStorage.getInstance().reference.child("PRESENTACION")
 
                 newPost.path = path
                 imgRef.putFile(imageEncoded!!)
@@ -95,7 +97,8 @@ class PublishActivity : AppCompatActivity() {
                     }
             }
 
-            val document = db.collection("posts").document()
+            val name = post_name.text.toString().trim()
+            val document = db.collection("posts").document(name)
             newPost.id = document.id
             newPost.name = post_name.text.toString().trim()
             newPost.age = post_age.text.toString().toInt()
@@ -105,6 +108,11 @@ class PublishActivity : AppCompatActivity() {
             newPost.cp = post_postalCode.text.toString().trim()
             newPost.description = post_description.text.toString().trim()
             newPost.shelter
+
+            val imgURL = "https://firebasestorage.googleapis.com/v0/b/shelted-ffe38.appspot.com/o/" +
+                            path + "?alt=media&token=760ecd94-5cd2-4e02-ad8c-d0d92d337666"
+
+            newPost.mainImg = imgURL
 
             val handle = document.set(newPost)
 
@@ -130,5 +138,18 @@ class PublishActivity : AppCompatActivity() {
             startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_MULTIPLE)
         }
 
+    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        imageEncoded = data!!.data
+//        var bitmap = MediaStore.Images.Media.getBitmap(contentResolver, imageEncoded)
+        if (resultCode == Activity.RESULT_OK && requestCode == PICK_IMAGE_MULTIPLE){
+
+            if (imageEncoded != null) {                // if single image is selected
+                fotoAnimal.setImageURI(imageEncoded)
+
+
+            }
+        }
     }
 }

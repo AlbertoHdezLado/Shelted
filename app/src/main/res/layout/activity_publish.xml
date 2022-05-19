@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.Publish_Activity">
+    tools:context=".Activities.PublishActivity">
 
     <ImageView
         android:id="@+id/imageView5"
@@ -197,7 +197,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginRight="0dp"
-                app:icon="@android:drawable/ic_input_add" />
+                app:icon="@android:drawable/ic_input_add"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <Button
                 android:id="@+id/inicioButton"
@@ -207,7 +208,8 @@
                 android:layout_weight="1"
                 app:icon="@drawable/ic_home"
                 app:iconGravity="textStart"
-                app:iconPadding="0dp" />
+                app:iconPadding="0dp"
+                tools:ignore="SpeakableTextPresentCheck" />
 
         </LinearLayout>
     </ScrollView>
