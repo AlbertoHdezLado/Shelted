@@ -26,9 +26,9 @@ class ProfileFragment : Fragment() {
         val v = inflater.inflate(R.layout.fragment_profile, container, false)
         val query : Query = collectionReference
 
-        val email = auth.currentUser!!.email
+        //val email = auth.currentUser!!.email
 
-        prof_email.text = email
+        //prof_email.text = email
 
 
         return v
