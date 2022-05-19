@@ -11,6 +11,7 @@ import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.ActionBar
 import com.example.android.shelted.Classes.Post
 import com.example.android.shelted.Fragments.auth
 import com.example.android.shelted.R
@@ -41,8 +42,9 @@ class PublishActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val actionBar: ActionBar? = supportActionBar
+        actionBar!!.hide()
         setContentView(R.layout.activity_publish)
-
         imagePicker = findViewById(R.id.fotoAnimal)
         spinner_TipoAnimal.adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,optionsAnimal)
 
@@ -91,10 +93,11 @@ class PublishActivity : AppCompatActivity() {
             newPost.city = post_city.text.toString().trim()
             newPost.cp = post_postalCode.text.toString().trim()
             newPost.description = post_description.text.toString().trim()
+
             val user = FirebaseAuth.getInstance().currentUser
             user?.let {
                 // Name, email address, and profile photo Url
-                newPost.shelter = user.email.toString()
+                newPost.shelter = user.email
             }
 
 

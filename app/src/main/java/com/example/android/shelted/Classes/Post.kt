@@ -2,7 +2,6 @@ package com.example.android.shelted.Classes
 
 import com.google.firebase.firestore.IgnoreExtraProperties
 
-
 @IgnoreExtraProperties
 class Post(
     var id:String ?= null,

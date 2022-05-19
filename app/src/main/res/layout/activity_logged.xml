@@ -40,7 +40,8 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ic_add"
         app:layout_anchor="@id/bottom_appbar"
-        app:backgroundTint="#106b21"/>
+        app:backgroundTint="@color/main"
+        android:contentDescription="TODO" />
 
 
 

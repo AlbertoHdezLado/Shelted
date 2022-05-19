@@ -1,9 +1,5 @@
 package com.example.android.shelted.Classes
 
-import android.media.Image
-import android.provider.ContactsContract
-import android.security.identity.AccessControlProfile
-
 data class User(
     var email: String ?= null,
     var pass:String ?= null,
