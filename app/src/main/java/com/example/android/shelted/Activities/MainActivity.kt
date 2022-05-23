@@ -8,9 +8,6 @@ import com.example.android.shelted.Fragments.LoginFragment
 
 class MainActivity : AppCompatActivity() {
 
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val actionBar: ActionBar? = supportActionBar
@@ -23,5 +20,10 @@ class MainActivity : AppCompatActivity() {
         transaction.replace(R.id.main_activity,LoginFragment())
         transaction.addToBackStack(null)
         transaction.commit()
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        super.onDestroy()
     }
 }

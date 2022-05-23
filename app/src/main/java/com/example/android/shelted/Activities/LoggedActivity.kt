@@ -76,4 +76,8 @@ class LoggedActivity : AppCompatActivity() {
         }
 
     }
+
+    override fun onBackPressed() {
+        moveTaskToBack(true)
+    }
 }

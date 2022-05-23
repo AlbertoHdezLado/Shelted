@@ -95,11 +95,11 @@ class PublishActivity : AppCompatActivity() {
             newPost.description = post_description.text.toString().trim()
 
             val user = FirebaseAuth.getInstance().currentUser
-            user?.let {
-                // Name, email address, and profile photo Url
-                newPost.shelter = user.email
+            if (user != null) {
+                println(user.toString())
+            } else {
+                println("NO")
             }
-
 
             val handle = document.set(newPost)
 
@@ -129,13 +129,9 @@ class PublishActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         imageEncoded = data!!.data
-//        var bitmap = MediaStore.Images.Media.getBitmap(contentResolver, imageEncoded)
         if (resultCode == Activity.RESULT_OK && requestCode == PICK_IMAGE_MULTIPLE){
-
             if (imageEncoded != null) {                // if single image is selected
                 fotoAnimal.setImageURI(imageEncoded)
-
-
             }
         }
     }

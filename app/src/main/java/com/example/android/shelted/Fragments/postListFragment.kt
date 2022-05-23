@@ -1,17 +1,26 @@
 package com.example.android.shelted.Fragments
 
+import android.content.ContentValues.TAG
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.shelted.Classes.Post
 import com.example.android.shelted.R
 import com.example.android.shelted.PostAdapter
+import com.example.android.shelted.RegisterFragment
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.firestore.*
+import kotlinx.android.synthetic.main.activity_logged.view.*
 import kotlinx.android.synthetic.main.fragment_post_list.*
 
 class postListFragment : Fragment() {
@@ -55,6 +64,4 @@ class postListFragment : Fragment() {
         super.onDestroy()
         postAdapter!!.stopListening()
     }
-
-
 }
