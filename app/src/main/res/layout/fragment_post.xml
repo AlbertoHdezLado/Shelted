@@ -7,54 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.postFragment">
 
-    <TextView
-        android:id="@+id/phone_number"
-        android:layout_width="278dp"
-        android:layout_height="25dp"
-        android:layout_marginBottom="5dp"
-        android:text="+48 520 626 357"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/mail"
-        android:layout_width="278dp"
-        android:layout_height="25dp"
-        android:text="safeanimals@gmail.com"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/address"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/address"
-        android:layout_width="278dp"
-        android:layout_height="25dp"
-        android:layout_marginBottom="5dp"
-        android:text="Boleslawa Prusa 11, Wroclaw"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/phone_number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <Button
-        android:id="@+id/button_shelter"
+        android:id="@+id/post_button_shelter"
         android:layout_width="194dp"
         android:layout_height="56dp"
-        android:layout_marginBottom="5dp"
         android:text="SafeAnimals"
-        app:layout_constraintBottom_toTopOf="@+id/mail"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pet_shelter" />
+        app:layout_constraintTop_toBottomOf="@+id/post_pet_shelter" />
 
     <TextView
-        android:id="@+id/pet_name"
+        android:id="@+id/post_pet_name"
         android:layout_width="123dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
@@ -64,10 +28,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/post_imageView" />
 
     <TextView
-        android:id="@+id/text_age"
+        android:id="@+id/post_text_age"
         android:layout_width="123dp"
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
@@ -77,10 +41,10 @@
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pet_name" />
+        app:layout_constraintTop_toBottomOf="@+id/post_pet_name" />
 
     <TextView
-        android:id="@+id/text_shelter"
+        android:id="@+id/post_text_shelter"
         android:layout_width="123dp"
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
@@ -90,10 +54,10 @@
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_age" />
+        app:layout_constraintTop_toBottomOf="@+id/post_text_age" />
 
     <TextView
-        android:id="@+id/pet_shelter"
+        android:id="@+id/post_pet_shelter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
@@ -102,11 +66,11 @@
         android:textAlignment="center"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/text_shelter"
-        app:layout_constraintTop_toBottomOf="@+id/pet_age" />
+        app:layout_constraintStart_toEndOf="@+id/post_text_shelter"
+        app:layout_constraintTop_toBottomOf="@+id/post_pet_age" />
 
     <TextView
-        android:id="@+id/pet_age"
+        android:id="@+id/post_pet_age"
         android:layout_width="123dp"
         android:layout_height="50dp"
         android:layout_marginStart="5dp"
@@ -115,11 +79,11 @@
         android:textAlignment="center"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/text_age"
-        app:layout_constraintTop_toBottomOf="@+id/pet_name" />
+        app:layout_constraintStart_toEndOf="@+id/post_text_age"
+        app:layout_constraintTop_toBottomOf="@+id/post_pet_name" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/post_imageView"
         android:layout_width="414dp"
         android:layout_height="225dp"
         android:layout_marginTop="10dp"

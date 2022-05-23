@@ -25,11 +25,11 @@ class ProfileFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val v = inflater.inflate(R.layout.fragment_profile, container, false)
-        val query : Query = collectionReference
+        //val query : Query = collectionReference
 
-        val email = FirebaseAuth.getInstance().currentUser!!.email
+        //val email = FirebaseAuth.getInstance().currentUser!!.email
 
-        prof_email.text = email
+        //prof_email.text = email
 
 
         return v

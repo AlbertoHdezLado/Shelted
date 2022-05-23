@@ -78,6 +78,10 @@ class LoggedActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        moveTaskToBack(true)
+        var f: Fragment? = supportFragmentManager.findFragmentById(R.id.logged_activity)
+        if (f !is postFragment)
+            moveTaskToBack(true)
+        else
+            super.onBackPressed()
     }
 }

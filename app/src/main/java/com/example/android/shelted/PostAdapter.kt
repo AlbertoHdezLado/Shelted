@@ -1,6 +1,8 @@
 package com.example.android.shelted
 
 import android.annotation.SuppressLint
+import android.graphics.Color
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,11 +32,18 @@ class PostAdapter(options: FirestoreRecyclerOptions<Post>) :
             .inflate(R.layout.card_layout, parent, false))
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: PostAdapterVH, position: Int, model: Post) {
         holder.itemTitle.text = model.name
         holder.itemAge.text = model.age.toString()
         holder.itemDescription.text = model.description
         holder.itemLocation.text = "${model.city}, ${model.country}"
+        when(model.kind) {
+            "Dog" -> holder.itemView.setBackgroundColor((Color.parseColor("#98fb98")))
+            "Cat" -> holder.itemView.setBackgroundColor((Color.parseColor("#ffcb94")))
+            "Rabbit" -> holder.itemView.setBackgroundColor((Color.parseColor("#ff94ff")))
+            "Bird" -> holder.itemView.setBackgroundColor((Color.parseColor("#94feff")))
+        }
         Picasso
             .get()
             .load("https://firebasestorage.googleapis.com/v0/b/shelted-d5576.appspot.com/o/${model.path}?alt=media&token=f95e312c-97ac-468c-a281-5f0eea32b5a7")
@@ -43,8 +52,19 @@ class PostAdapter(options: FirestoreRecyclerOptions<Post>) :
             .into(holder.itemImage)
         holder.itemView.setOnClickListener(object: View.OnClickListener {
             override fun onClick(v: View?) {
+                val bundle = Bundle()
+                bundle.putString("name", model.name)
+                bundle.putString("age", model.age.toString())
+                bundle.putString("kind", model.kind)
+                bundle.putString("country", model.country)
+                bundle.putString("city", model.city)
+                bundle.putString("cp", model.cp)
+                bundle.putString("description", model.description)
+                bundle.putString("imagePath", model.path)
+
                 val activity=v!!.context as AppCompatActivity
                 val postFragment = postFragment()
+                postFragment.arguments = bundle
                 val fragmentManager: FragmentManager = activity.supportFragmentManager
                 val transaction = fragmentManager.beginTransaction()
                 transaction.replace(R.id.logged_activity,postFragment)

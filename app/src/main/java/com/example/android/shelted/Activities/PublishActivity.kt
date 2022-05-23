@@ -2,7 +2,6 @@ package com.example.android.shelted.Activities
 
 import android.app.Activity
 import android.app.ProgressDialog
-import android.content.ContentValues
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -13,20 +12,14 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import com.example.android.shelted.Classes.Post
-import com.example.android.shelted.Fragments.auth
 import com.example.android.shelted.R
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
-import kotlinx.android.synthetic.main.activity_logged.*
 import kotlinx.android.synthetic.main.activity_publish.*
 import java.util.*
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.auth.FirebaseAuth
-
-import com.google.firebase.auth.FirebaseUser
-
-
 
 
 class PublishActivity : AppCompatActivity() {
@@ -46,15 +39,14 @@ class PublishActivity : AppCompatActivity() {
         actionBar!!.hide()
         setContentView(R.layout.activity_publish)
         imagePicker = findViewById(R.id.fotoAnimal)
-        spinner_TipoAnimal.adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,optionsAnimal)
+        newPost_spinner_kind.adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,optionsAnimal)
 
         abrirGaleria()
-        botonInicio()
         uploadPublish()
     }
 
     private fun uploadPublish() {
-        publishButton.setOnClickListener {
+        newPost_publishButton.setOnClickListener {
             var path = UUID.randomUUID().toString()
 
             var imgRef: StorageReference =  FirebaseStorage.getInstance().reference.child(path)
@@ -83,16 +75,16 @@ class PublishActivity : AppCompatActivity() {
                     }
             }
 
-            val name = post_name.text.toString().trim()
+            val name = newPost_name.text.toString().trim()
             val document = db.collection("posts").document(name)
             newPost.id = document.id
-            newPost.name = post_name.text.toString().trim()
-            newPost.age = post_age.text.toString().toInt()
-            newPost.kind = spinner_TipoAnimal.selectedItem.toString().trim()
-            newPost.country = post_country.text.toString().trim()
-            newPost.city = post_city.text.toString().trim()
-            newPost.cp = post_postalCode.text.toString().trim()
-            newPost.description = post_description.text.toString().trim()
+            newPost.name = newPost_name.text.toString().trim()
+            newPost.age = newPost_age.text.toString().toInt()
+            newPost.kind = newPost_spinner_kind.selectedItem.toString().trim()
+            newPost.country = newPost_country.text.toString().trim()
+            newPost.city = newPost_city.text.toString().trim()
+            newPost.cp = newPost_postalCode.text.toString().trim()
+            newPost.description = newPost_description.text.toString().trim()
 
             val user = FirebaseAuth.getInstance().currentUser
             if (user != null) {
@@ -109,11 +101,6 @@ class PublishActivity : AppCompatActivity() {
         }
 
     }
-
-    private fun botonInicio() {
-        inicioButton.setOnClickListener {finish()}
-    }
-
 
     private fun abrirGaleria() {
 

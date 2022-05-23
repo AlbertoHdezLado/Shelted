@@ -6,7 +6,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_view"
     android:layout_margin="5dp"
-    app:cardBackgroundColor="#98fb98"
     app:cardCornerRadius="8dp"
     app:cardElevation="3dp"
     app:contentPadding="4dp"
