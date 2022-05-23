@@ -63,9 +63,6 @@ class PublishActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val document = db.collection("posts").document(newPost.name!!)
-            newPost.id = document.id
-
             var imgRef: StorageReference =  FirebaseStorage.getInstance().reference.child(path)
             if (imageEncoded != null) {
                 var pd = ProgressDialog(this)
@@ -90,14 +87,11 @@ class PublishActivity : AppCompatActivity() {
                         var progress = (100.0 * p0.bytesTransferred) / p0.totalByteCount
                         pd.setMessage("Uploaded ${progress.toInt()} %")
                     }
-            } else {
-                when (newPost.kind) {
-                    "Dog" -> newPost.path = "dog.png"
-                    "Cat" -> newPost.path = "cat.png"
-                    "Rabbit" -> newPost.path = "rabbit.png"
-                    "Bird" -> newPost.path = "bird.png"
-                }
             }
+
+            val document = db.collection("posts").document()
+            newPost.id = document.id
+            db.collection("posts").document(newPost.id!!)
 
             val user = FirebaseAuth.getInstance().currentUser
             if (user != null) {
