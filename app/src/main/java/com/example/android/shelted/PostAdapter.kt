@@ -44,10 +44,15 @@ class PostAdapter(options: FirestoreRecyclerOptions<Post>) :
             "Rabbit" -> holder.itemView.setBackgroundColor((Color.parseColor("#ff94ff")))
             "Bird" -> holder.itemView.setBackgroundColor((Color.parseColor("#94feff")))
         }
+
+        var path = model.path
+        if (path == "")
+            path = model.kind.toString().lowercase() + ".png"
+
         Picasso
             .get()
-            .load("https://firebasestorage.googleapis.com/v0/b/shelted-d5576.appspot.com/o/${model.path}?alt=media&token=f95e312c-97ac-468c-a281-5f0eea32b5a7")
-            .resize(50, 50)
+            .load("https://firebasestorage.googleapis.com/v0/b/shelted-d5576.appspot.com/o/${path}?alt=media&token=f95e312c-97ac-468c-a281-5f0eea32b5a7")
+            .resize(1000, 1000)
             .centerCrop()
             .into(holder.itemImage)
         holder.itemView.setOnClickListener(object: View.OnClickListener {

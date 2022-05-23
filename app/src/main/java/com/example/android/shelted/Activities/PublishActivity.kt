@@ -49,6 +49,23 @@ class PublishActivity : AppCompatActivity() {
         newPost_publishButton.setOnClickListener {
             var path = UUID.randomUUID().toString()
 
+            newPost.name = newPost_name.text.toString().trim()
+            if (newPost_age.text.toString() != "")
+                newPost.age = newPost_age.text.toString().toInt()
+            newPost.kind = newPost_spinner_kind.selectedItem.toString().trim()
+            newPost.country = newPost_country.text.toString().trim()
+            newPost.city = newPost_city.text.toString().trim()
+            newPost.cp = newPost_postalCode.text.toString().trim()
+            newPost.description = newPost_description.text.toString().trim()
+
+            if ((newPost.name == "") || (newPost.age!! < 0) || newPost.country == "" || newPost.cp == "" || newPost.description == "") {
+                Toast.makeText(applicationContext, "Empty fields!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            val document = db.collection("posts").document(newPost.name!!)
+            newPost.id = document.id
+
             var imgRef: StorageReference =  FirebaseStorage.getInstance().reference.child(path)
             if (imageEncoded != null) {
                 var pd = ProgressDialog(this)
@@ -73,18 +90,14 @@ class PublishActivity : AppCompatActivity() {
                         var progress = (100.0 * p0.bytesTransferred) / p0.totalByteCount
                         pd.setMessage("Uploaded ${progress.toInt()} %")
                     }
+            } else {
+                when (newPost.kind) {
+                    "Dog" -> newPost.path = "dog.png"
+                    "Cat" -> newPost.path = "cat.png"
+                    "Rabbit" -> newPost.path = "rabbit.png"
+                    "Bird" -> newPost.path = "bird.png"
+                }
             }
-
-            val name = newPost_name.text.toString().trim()
-            val document = db.collection("posts").document(name)
-            newPost.id = document.id
-            newPost.name = newPost_name.text.toString().trim()
-            newPost.age = newPost_age.text.toString().toInt()
-            newPost.kind = newPost_spinner_kind.selectedItem.toString().trim()
-            newPost.country = newPost_country.text.toString().trim()
-            newPost.city = newPost_city.text.toString().trim()
-            newPost.cp = newPost_postalCode.text.toString().trim()
-            newPost.description = newPost_description.text.toString().trim()
 
             val user = FirebaseAuth.getInstance().currentUser
             if (user != null) {
