@@ -81,7 +81,7 @@ class PublishActivity : AppCompatActivity() {
                         pd.dismiss()
                         Toast.makeText(
                             applicationContext,
-                            "Imagen subida con éxito",
+                            "Image uploaded successfully",
                             Toast.LENGTH_LONG
                         ).show()
                     }

@@ -16,6 +16,7 @@ import android.text.TextUtils
 import android.widget.EditText
 import com.google.firebase.auth.FirebaseAuth
 import android.content.Intent
+import android.util.Log
 import com.example.android.shelted.Activities.LoggedActivity
 
 import com.example.android.shelted.Activities.MainActivity
@@ -49,7 +50,8 @@ class LoginFragment : Fragment() {
             } else {
                 auth.signInWithEmailAndPassword(txt_email, txt_password).addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        Toast.makeText(activity, "Successful login!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(activity, "Logged-in successful!", Toast.LENGTH_SHORT).show()
+                        val user = auth.currentUser
                         startActivity(Intent(activity, LoggedActivity::class.java))
                     } else {
                         Toast.makeText(activity,

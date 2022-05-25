@@ -82,12 +82,13 @@ class RegisterFragment : Fragment() {
         auth.createUserWithEmailAndPassword(emailText, passwordText).addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 Toast.makeText(activity, "Successful login!", Toast.LENGTH_SHORT).show()
+                val user = com.example.android.shelted.Fragments.auth.currentUser
 
                 //Save user data in firebase
-                val user = User(emailText, passwordText, nameText, dateText, shelter.isChecked)
+                val userBD = User(emailText, passwordText, nameText, dateText, shelter.isChecked)
                 val rootRef = FirebaseFirestore.getInstance()
                 val usersRef = rootRef.collection("users")
-                usersRef.document(emailText).set(user)
+                usersRef.document(emailText).set(userBD)
 
                 //Change fragment to login
                 val context = activity as AppCompatActivity
