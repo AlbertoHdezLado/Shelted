@@ -23,13 +23,12 @@ import com.example.android.shelted.Fragments.postFragment
 import androidx.core.widget.CompoundButtonCompat
 
 import android.R.id
+import android.content.ContentValues
 
 import androidx.core.content.ContextCompat
 
 import android.content.res.ColorStateList
-
-
-
+import android.util.Log
 
 
 class PostAdapter(options: FirestoreRecyclerOptions<Post>) :
@@ -89,8 +88,24 @@ class PostAdapter(options: FirestoreRecyclerOptions<Post>) :
             }
         })
 
-        //val darkStateList = ContextCompat.getColorStateList(holder.checkBoxFavourite.context, R.color.checkbox_tint_dark_theme)
-        //CompoundButtonCompat.setButtonTintList(holder.checkBoxFavourite, darkStateList)
+        val states = arrayOf(
+            intArrayOf(android.R.attr.state_checked),
+            intArrayOf(-android.R.attr.state_checked))
+
+        val colors = intArrayOf(
+            Color.parseColor("#FFFF00"),
+            Color.parseColor("#FFFFFF"))
+
+        holder.checkBoxFavourite.buttonTintList = ColorStateList(states, colors)
+
+        holder.checkBoxFavourite.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked) {
+
+            }
+            else {
+
+            }
+        }
 
 
     }

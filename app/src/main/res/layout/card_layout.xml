@@ -96,8 +96,7 @@
             android:layout_height="30dp"
             android:button="@drawable/fav_paw_check_box"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:buttonTint="@color/white"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
