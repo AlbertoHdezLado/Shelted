@@ -36,9 +36,13 @@ class postFragment : Fragment() {
         nameText.text = name
         ageText.text = age
 
+        var path = imagePath
+        if (path == "")
+            path = kind.lowercase() + ".png"
+
         Picasso
             .get()
-            .load("https://firebasestorage.googleapis.com/v0/b/shelted-d5576.appspot.com/o/${imagePath}?alt=media&token=f95e312c-97ac-468c-a281-5f0eea32b5a7")
+            .load("https://firebasestorage.googleapis.com/v0/b/shelted-d5576.appspot.com/o/${path}?alt=media&token=f95e312c-97ac-468c-a281-5f0eea32b5a7")
             .resize(1000, 1000)
             .centerCrop()
             .into(imageView)
