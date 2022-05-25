@@ -36,8 +36,8 @@ class LoginFragment : Fragment() {
         val context = activity as AppCompatActivity
         val logButton: TextView = v.findViewById(R.id.logfragment_logbutt)
         val regButton: TextView = v.findViewById(R.id.logfragment_regbutt)
-        val email: EditText = v.findViewById(R.id.emailField);
-        val password: EditText = v.findViewById(R.id.passwordField);
+        val email: EditText = v.findViewById(R.id.emailField)
+        val password: EditText = v.findViewById(R.id.passwordField)
 
         // Replace fragment
         logButton.setOnClickListener {

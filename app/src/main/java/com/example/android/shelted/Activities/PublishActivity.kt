@@ -2,10 +2,12 @@ package com.example.android.shelted.Activities
 
 import android.app.Activity
 import android.app.ProgressDialog
+import android.content.ContentValues
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.InputType
 import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.ImageView
@@ -20,6 +22,7 @@ import kotlinx.android.synthetic.main.activity_publish.*
 import java.util.*
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 
 class PublishActivity : AppCompatActivity() {
@@ -57,6 +60,9 @@ class PublishActivity : AppCompatActivity() {
             newPost.city = newPost_city.text.toString().trim()
             newPost.cp = newPost_postalCode.text.toString().trim()
             newPost.description = newPost_description.text.toString().trim()
+            val auth = FirebaseAuth.getInstance()
+            newPost.shelter = auth.currentUser?.email
+            Log.d(ContentValues.TAG,"${auth.currentUser?.email}")
 
             if ((newPost.name == "") || (newPost.age!! < 0) || newPost.country == "" || newPost.cp == "" || newPost.description == "") {
                 Toast.makeText(applicationContext, "Empty fields!", Toast.LENGTH_SHORT).show()
@@ -92,14 +98,6 @@ class PublishActivity : AppCompatActivity() {
             val document = db.collection("posts").document()
             newPost.id = document.id
             db.collection("posts").document(newPost.id!!)
-
-            val user = FirebaseAuth.getInstance().currentUser
-            if (user != null) {
-                println(user.toString())
-            } else {
-                println("NO")
-            }
-
             val handle = document.set(newPost)
 
             handle.addOnSuccessListener { Log.d("Firebase", "Document saved") }

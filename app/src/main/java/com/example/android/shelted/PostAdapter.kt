@@ -20,6 +20,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import com.example.android.shelted.Fragments.postFragment
 
+import androidx.core.widget.CompoundButtonCompat
+
+import android.R.id
+
+import androidx.core.content.ContextCompat
+
+import android.content.res.ColorStateList
+
+
+
+
 
 class PostAdapter(options: FirestoreRecyclerOptions<Post>) :
     FirestoreRecyclerAdapter<Post, PostAdapter.PostAdapterVH>(options) {
@@ -77,6 +88,11 @@ class PostAdapter(options: FirestoreRecyclerOptions<Post>) :
                 transaction.commit()
             }
         })
+
+        //val darkStateList = ContextCompat.getColorStateList(holder.checkBoxFavourite.context, R.color.checkbox_tint_dark_theme)
+        //CompoundButtonCompat.setButtonTintList(holder.checkBoxFavourite, darkStateList)
+
+
     }
 
     class PostAdapterVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -85,5 +101,6 @@ class PostAdapter(options: FirestoreRecyclerOptions<Post>) :
         var itemDescription = itemView.item_description
         var itemLocation = itemView.item_location
         var itemImage = itemView.item_image
+        var checkBoxFavourite = itemView.checkBox_Favourite
     }
 }

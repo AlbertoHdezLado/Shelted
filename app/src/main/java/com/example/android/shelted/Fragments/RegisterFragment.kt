@@ -38,7 +38,7 @@ class RegisterFragment : Fragment() {
         name = v.findViewById(R.id.prof_name)
         date = v.findViewById(R.id.prof_date)
         shelter = v.findViewById(R.id.prof_shelter)
-        val regbutton: Button = v.findViewById(R.id.regfragment_regbutt)
+        val regbutton: Button = v.findViewById(R.id.prof_modify_button)
         val logbutton: TextView = v.findViewById(R.id.regfragment_logbutt)
 
         // Initialising auth object
