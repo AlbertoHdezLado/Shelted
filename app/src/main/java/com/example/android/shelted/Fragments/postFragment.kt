@@ -36,9 +36,15 @@ class postFragment : Fragment() {
         val nameText: TextView = v.findViewById(R.id.post_pet_name)
         val ageText: TextView = v.findViewById(R.id.post_pet_age)
         val imageView: ImageView = v.findViewById(R.id.post_imageView)
+        val descriptionText: TextView = v.findViewById(R.id.postDescription)
+        val shelterText: TextView = v.findViewById(R.id.post_pet_shelter)
+        val kindText: TextView = v.findViewById(R.id.post_pet_kind)
 
         nameText.text = name
         ageText.text = age
+        descriptionText.text = description
+        shelterText.text = shelter
+        kindText.text = kind
 
         var path = imagePath
         if (path == "")

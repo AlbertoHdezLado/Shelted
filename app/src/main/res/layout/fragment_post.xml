@@ -7,6 +7,35 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.postFragment">
 
+    <TextView
+        android:id="@+id/post_pet_kind"
+        android:layout_width="123dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="10dp"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintStart_toEndOf="@+id/post_text_kind"
+        app:layout_constraintTop_toBottomOf="@+id/post_pet_name" />
+
+    <TextView
+        android:id="@+id/post_description_text"
+        android:layout_width="190dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="136dp"
+        android:text="Description:"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/post_text_age" />
+
     <Button
         android:id="@+id/post_button_shelter"
         android:layout_width="194dp"
@@ -14,17 +43,19 @@
         android:text="SafeAnimals"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/post_pet_shelter" />
+        app:layout_constraintTop_toBottomOf="@+id/post_pet_shelter"
+        app:layout_constraintVertical_bias="0.72" />
 
     <TextView
         android:id="@+id/post_pet_name"
         android:layout_width="123dp"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:text="Max"
+        android:layout_marginTop="8dp"
         android:textAlignment="center"
-        android:textSize="34sp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="38sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +69,8 @@
         android:layout_marginTop="10dp"
         android:text="Age :"
         android:textAlignment="center"
-        android:textSize="34sp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/post_pet_name" />
@@ -51,7 +83,22 @@
         android:layout_marginTop="10dp"
         android:text="Shelter:"
         android:textAlignment="center"
-        android:textSize="34sp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/post_text_age" />
+
+    <TextView
+        android:id="@+id/post_text_kind"
+        android:layout_width="123dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="76dp"
+        android:text="Kind:"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/post_text_age" />
@@ -60,12 +107,13 @@
         android:id="@+id/post_pet_shelter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
-        android:text="pet_shelter"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="10dp"
         android:textAlignment="center"
-        android:textSize="34sp"
+        android:textSize="28sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/post_text_shelter"
         app:layout_constraintTop_toBottomOf="@+id/post_pet_age" />
 
@@ -73,22 +121,38 @@
         android:id="@+id/post_pet_age"
         android:layout_width="123dp"
         android:layout_height="50dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
         android:text="2 y.o."
         android:textAlignment="center"
-        android:textSize="34sp"
+        android:textSize="28sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toEndOf="@+id/post_text_age"
         app:layout_constraintTop_toBottomOf="@+id/post_pet_name" />
 
     <ImageView
         android:id="@+id/post_imageView"
-        android:layout_width="414dp"
+        android:layout_width="match_parent"
         android:layout_height="225dp"
-        android:layout_marginTop="10dp"
         android:src="@drawable/pet_3635985_1280"
+        android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/postDescription"
+        android:layout_width="357dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toTopOf="@+id/post_button_shelter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/post_description_text"
+        app:layout_constraintVertical_bias="0.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>

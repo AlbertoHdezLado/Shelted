@@ -3,30 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Marc/AndroidStudioProjects/NewShelted/app/src/main/res/layout/card_layout.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Marc/AndroidStudioProjects/NewShelted/app/src/main/res/layout/fragment_post.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Marc/AndroidStudioProjects/NewShelted/app/src/main/res/layout/fragment_post_list.xml" value="0.5" />
+        <entry key="..\:/Users/Marc/AndroidStudioProjects/NewShelted/app/src/main/res/layout/fragment_profile.xml" value="0.33" />
+        <entry key="..\:/Users/Marc/AndroidStudioProjects/NewShelted/app/src/main/res/layout/fragment_shelter_profile.xml" value="0.358695652173913" />
         <entry key="..\:/Users/Marc/AndroidStudioProjects/Shelted/app/src/main/res/layout/card_layout.xml" value="0.28854166666666664" />
         <entry key="..\:/Users/Marc/AndroidStudioProjects/Shelted/app/src/main/res/layout/fragment_post.xml" value="0.33" />
         <entry key="..\:/Users/Marc/AndroidStudioProjects/Shelted/app/src/main/res/layout/fragment_post_list.xml" value="0.33" />
         <entry key="..\:/Users/Marc/AndroidStudioProjects/Shelted/app/src/main/res/layout/fragment_post_small.xml" value="0.26875" />
         <entry key="..\:/Users/Marc/AndroidStudioProjects/Shelted/app/src/main/res/layout/fragment_recycler_adapter.xml" value="0.358695652173913" />
         <entry key="..\:/Users/Marc/AndroidStudioProjects/Shelted/app/src/main/res/layout/list_items.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/alber/AndroidStudioProjects/Shelted/app/src/main/res/drawable-anydpi/ic_add_white.xml" value="0.14322916666666666" />
-        <entry key="..\:/Users/alber/AndroidStudioProjects/Shelted/app/src/main/res/drawable/ic_add_white.xml" value="0.14322916666666666" />
         <entry key="..\:/Users/alber/AndroidStudioProjects/Shelted/app/src/main/res/drawable/ic_launcher_background.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/alber/AndroidStudioProjects/Shelted/app/src/main/res/layout/activity_logged.xml" value="0.2" />
         <entry key="..\:/Users/alber/AndroidStudioProjects/Shelted/app/src/main/res/layout/activity_publish.xml" value="0.45650140318054255" />
         <entry key="..\:/Users/alber/AndroidStudioProjects/Shelted/app/src/main/res/layout/card_layout.xml" value="0.2" />
-        <entry key="..\:/Users/alber/AndroidStudioProjects/Shelted/app/src/main/res/layout/card_layout_others_messages.xml" value="0.12360688956433637" />
-        <entry key="..\:/Users/alber/AndroidStudioProjects/Shelted/app/src/main/res/layout/card_layout_own_messages.xml" value="0.12360688956433637" />
-        <entry key="..\:/Users/alber/AndroidStudioProjects/Shelted/app/src/main/res/layout/fragment_favourites.xml" value="0.12318840579710146" />
-        <entry key="..\:/Users/alber/AndroidStudioProjects/Shelted/app/src/main/res/layout/fragment_login.xml" value="0.12318840579710146" />
-        <entry key="..\:/Users/alber/AndroidStudioProjects/Shelted/app/src/main/res/layout/fragment_message.xml" value="0.12318840579710146" />
-        <entry key="..\:/Users/alber/AndroidStudioProjects/Shelted/app/src/main/res/layout/fragment_message_list.xml" value="0.4" />
         <entry key="..\:/Users/alber/AndroidStudioProjects/Shelted/app/src/main/res/layout/fragment_post.xml" value="0.2" />
         <entry key="..\:/Users/alber/AndroidStudioProjects/Shelted/app/src/main/res/layout/fragment_post_list.xml" value="0.14583333333333334" />
-        <entry key="..\:/Users/alber/AndroidStudioProjects/Shelted/app/src/main/res/layout/fragment_register.xml" value="0.12318840579710146" />
-        <entry key="..\:/Users/alber/AndroidStudioProjects/Shelted/app/src/main/res/layout/fragment_shelter_profile.xml" value="0.264" />
-        <entry key="..\:/Users/alber/AndroidStudioProjects/Shelted/app/src/main/res/menu/bottom_nav_menu.xml" value="0.12708333333333333" />
-        <entry key="..\:/Users/alber/AndroidStudioProjects/Shelted/app/src/main/res/menu/bottom_nav_menu_no_placeholder.xml" value="0.1421875" />
         <entry key="..\:/Users/alber/AndroidStudioProjects/Shelted/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/alber/Desktop/Shelted/app/src/main/res/layout/activity_logged.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/alber/Desktop/Shelted/app/src/main/res/layout/activity_login.xml" value="0.12360688956433637" />
@@ -44,11 +37,12 @@
         <entry key="..\:/Users/r4ul0/AndroidStudioProjects/Shelted/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/r4ul0/AndroidStudioProjects/Shelted/app/src/main/res/layout/activity_publish.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/r4ul0/AndroidStudioProjects/Shelted/app/src/main/res/layout/card_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/r4ul0/AndroidStudioProjects/Shelted/app/src/main/res/layout/fragment_favourites.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/r4ul0/AndroidStudioProjects/Shelted/app/src/main/res/layout/fragment_login.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/r4ul0/AndroidStudioProjects/Shelted/app/src/main/res/layout/fragment_main_screen.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/r4ul0/AndroidStudioProjects/Shelted/app/src/main/res/layout/fragment_message.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/r4ul0/AndroidStudioProjects/Shelted/app/src/main/res/layout/fragment_message_list.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/r4ul0/AndroidStudioProjects/Shelted/app/src/main/res/layout/fragment_profile.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/r4ul0/AndroidStudioProjects/Shelted/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
         <entry key="..\:/Users/r4ul0/AndroidStudioProjects/Shelted/app/src/main/res/layout/fragment_register.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/r4ul0/AndroidStudioProjects/Shelted/app/src/main/res/layout/main_activity.xml" value="0.29846014492753625" />
         <entry key="..\:/Users/r4ul0/AndroidStudioProjects/Shelted/app/src/main/res/menu/bottom_nav_menu.xml" value="0.36666666666666664" />
