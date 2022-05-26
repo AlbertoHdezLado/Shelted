@@ -11,7 +11,7 @@ import com.example.android.shelted.Classes.Post
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.card_layout.view.*
+import kotlinx.android.synthetic.main.card_layout_post.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import com.example.android.shelted.Fragments.postFragment
@@ -27,7 +27,7 @@ class PostListAdapter(options: FirestoreRecyclerOptions<Post>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostAdapterVH {
 
         return PostAdapterVH(LayoutInflater.from(parent.context)
-            .inflate(R.layout.card_layout, parent, false))
+            .inflate(R.layout.card_layout_post, parent, false))
     }
 
     @SuppressLint("SetTextI18n")

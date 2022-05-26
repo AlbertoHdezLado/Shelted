@@ -11,4 +11,5 @@
     <color name="fondoScreen">#DAFFFFFF</color>
     <color name="save">#116B0A</color>
     <color name="buttons">#116B0A</color>
+    <color name="light_green">#61BC59</color>
 </resources>

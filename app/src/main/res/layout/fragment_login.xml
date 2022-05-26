@@ -38,7 +38,7 @@
         android:layout_marginTop="10dp"
         android:clickable="true"
         android:text="@string/i_don_t_have_an_account"
-        android:textColor="@android:color/holo_blue_light"
+        android:textColor="@color/light_green"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

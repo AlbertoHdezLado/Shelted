@@ -147,7 +147,7 @@
         android:clickable="true"
         android:minHeight="48dp"
         android:text="I already have an account!"
-        android:textColor="@android:color/holo_blue_light"
+        android:textColor="@color/light_green"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
