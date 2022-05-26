@@ -80,7 +80,7 @@
         <TextView
             android:id="@+id/item_description"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="38dp"
             android:layout_below="@id/item_location"
             android:layout_marginStart="12dp"
             android:layout_toRightOf="@id/imageView"
@@ -96,7 +96,8 @@
             android:layout_height="30dp"
             android:button="@drawable/fav_paw_check_box"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

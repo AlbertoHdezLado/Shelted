@@ -1,6 +1,6 @@
 package com.example.android.shelted.Fragments
 
-import android.location.Location
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -16,6 +16,7 @@ import com.example.android.shelted.R
 import com.squareup.picasso.Picasso
 
 class postFragment : Fragment() {
+    @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -44,7 +45,7 @@ class postFragment : Fragment() {
         nameText.text = name
         ageText.text = age
         descriptionText.text = description
-        locationText.text = city + ", " + country
+        locationText.text = "$city, $country"
         kindText.text = kind
 
         var path = imagePath
