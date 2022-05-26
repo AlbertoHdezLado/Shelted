@@ -51,7 +51,6 @@ class LoginFragment : Fragment() {
                 auth.signInWithEmailAndPassword(txt_email, txt_password).addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         Toast.makeText(activity, "Logged-in successful!", Toast.LENGTH_SHORT).show()
-                        val user = auth.currentUser
                         startActivity(Intent(activity, LoggedActivity::class.java))
                     } else {
                         Toast.makeText(activity,
