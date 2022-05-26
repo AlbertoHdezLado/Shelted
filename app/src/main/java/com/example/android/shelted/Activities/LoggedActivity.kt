@@ -121,7 +121,7 @@ class LoggedActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        var f: Fragment? = supportFragmentManager.findFragmentById(R.id.logged_activity)
+        val f: Fragment? = supportFragmentManager.findFragmentById(R.id.logged_activity)
         if (f !is postFragment && f !is ShelterProfileFragment)
             moveTaskToBack(true)
         else
