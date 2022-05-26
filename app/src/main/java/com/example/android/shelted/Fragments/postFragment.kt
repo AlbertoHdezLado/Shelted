@@ -1,5 +1,6 @@
 package com.example.android.shelted.Fragments
 
+import android.location.Location
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -37,13 +38,13 @@ class postFragment : Fragment() {
         val ageText: TextView = v.findViewById(R.id.post_pet_age)
         val imageView: ImageView = v.findViewById(R.id.post_imageView)
         val descriptionText: TextView = v.findViewById(R.id.postDescription)
-        val shelterText: TextView = v.findViewById(R.id.post_pet_shelter)
+        val locationText: TextView = v.findViewById(R.id.post_pet_location)
         val kindText: TextView = v.findViewById(R.id.post_pet_kind)
 
         nameText.text = name
         ageText.text = age
         descriptionText.text = description
-        shelterText.text = shelter
+        locationText.text = city + ", " + country
         kindText.text = kind
 
         var path = imagePath
