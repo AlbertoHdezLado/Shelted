@@ -8,4 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="main">#19a433 </color>
+    <color name="fondoScreen">#DAFFFFFF</color>
+    <color name="save">#DA679933</color>
+    <color name="botones">#975B00</color>
 </resources>

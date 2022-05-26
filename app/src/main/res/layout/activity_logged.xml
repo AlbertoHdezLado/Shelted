@@ -5,7 +5,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/fondoScreen"
+    android:background="@color/fondoScreen">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/logged_activity"
@@ -40,7 +42,7 @@
         android:layout_height="wrap_content"
         android:src="@android:drawable/ic_input_add"
         app:layout_anchor="@id/bottom_appbar"
-        app:backgroundTint="#106b21"/>
+        app:backgroundTint="@color/botones"/>
 
 
 

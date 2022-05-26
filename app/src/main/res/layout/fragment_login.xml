@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:ignore="ExtraText">
 
     <ImageView
@@ -23,7 +22,7 @@
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_marginTop="70dp"
-        android:background="@color/main"
+        android:backgroundTint="@color/botones"
         android:text="@string/log_in"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
