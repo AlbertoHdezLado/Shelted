@@ -31,19 +31,19 @@ import android.content.res.ColorStateList
 import android.util.Log
 
 
-class PostAdapter(options: FirestoreRecyclerOptions<Post>) :
-    FirestoreRecyclerAdapter<Post, PostAdapter.PostAdapterVH>(options) {
+class FavouritesAdapter(options: FirestoreRecyclerOptions<Post>) :
+    FirestoreRecyclerAdapter<Post, FavouritesAdapter.FavouritesAdapterVH>(options) {
 
     lateinit var parent: ViewGroup
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostAdapterVH {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavouritesAdapterVH {
 
-        return PostAdapterVH(LayoutInflater.from(parent.context)
+        return FavouritesAdapterVH(LayoutInflater.from(parent.context)
             .inflate(R.layout.card_layout, parent, false))
     }
 
     @SuppressLint("SetTextI18n")
-    override fun onBindViewHolder(holder: PostAdapterVH, position: Int, model: Post) {
+    override fun onBindViewHolder(holder: FavouritesAdapterVH, position: Int, model: Post) {
         holder.itemTitle.text = model.name
         holder.itemAge.text = model.age.toString()
         holder.itemDescription.text = model.description
@@ -110,7 +110,7 @@ class PostAdapter(options: FirestoreRecyclerOptions<Post>) :
 
     }
 
-    class PostAdapterVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class FavouritesAdapterVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var itemTitle = itemView.item_title
         var itemAge = itemView.item_age
         var itemDescription = itemView.item_description
