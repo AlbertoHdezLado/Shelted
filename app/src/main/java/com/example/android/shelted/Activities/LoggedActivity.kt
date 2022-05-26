@@ -1,6 +1,8 @@
 package com.example.android.shelted.Activities
 
 import android.content.Intent
+import android.content.res.ColorStateList
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Window
@@ -74,6 +76,16 @@ class LoggedActivity : AppCompatActivity() {
         add_post.setOnClickListener {
             startActivity(Intent(this,PublishActivity::class.java ))
         }
+
+        val states = arrayOf(
+            intArrayOf(android.R.attr.state_checked),
+            intArrayOf(-android.R.attr.state_checked))
+
+        val colors = intArrayOf(
+            Color.parseColor("#DA417E02"),
+            Color.parseColor("#D3D3D3"))
+
+        bottom_navigation.itemIconTintList = ColorStateList(states, colors)
 
     }
 

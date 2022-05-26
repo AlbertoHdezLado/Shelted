@@ -188,7 +188,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="0dp"
-                android:backgroundTint="@color/botones"
+                android:backgroundTint="@color/buttons"
                 android:minHeight="48dp"
                 app:srcCompat="@drawable/ic_search"
                 tools:ignore="SpeakableTextPresentCheck" />
@@ -205,7 +205,7 @@
                 android:layout_height="match_parent"
                 app:icon="@android:drawable/ic_input_add"
                 tools:ignore="SpeakableTextPresentCheck"
-                android:backgroundTint="@color/botones"/>
+                android:backgroundTint="@color/buttons"/>
 
         </LinearLayout>
     </ScrollView>
