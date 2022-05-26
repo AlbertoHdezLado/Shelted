@@ -54,7 +54,7 @@ class LoggedActivity : AppCompatActivity() {
                     transaction.commit()
                     true}
                 R.id.buttonFavourites -> {
-                    fab.hide()
+                    fab.show()
                     val fragmentManager = supportFragmentManager
                     val transaction = fragmentManager.beginTransaction()
                     transaction.replace(R.id.logged_activity,favouritesFragment)
@@ -70,7 +70,7 @@ class LoggedActivity : AppCompatActivity() {
                     transaction.commit()
                     true}
                 R.id.buttonProfile -> {
-                    fab.hide()
+                    fab.show()
                     val fragmentManager = supportFragmentManager
                     val transaction = fragmentManager.beginTransaction()
                     transaction.replace(R.id.logged_activity,profileFragment)
@@ -99,7 +99,7 @@ class LoggedActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         var f: Fragment? = supportFragmentManager.findFragmentById(R.id.logged_activity)
-        if (f !is postFragment)
+        if (f !is postFragment && f !is ShelterProfileFragment)
             moveTaskToBack(true)
         else
             super.onBackPressed()

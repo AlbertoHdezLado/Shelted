@@ -5,9 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
 import com.example.android.shelted.R
 import com.squareup.picasso.Picasso
 
@@ -28,6 +31,7 @@ class postFragment : Fragment() {
         val cp = args?.get("cp").toString()
         val description = args?.get("description").toString()
         val imagePath = args?.get("imagePath").toString()
+        val shelter = args?.get("shelter").toString()
 
         val nameText: TextView = v.findViewById(R.id.post_pet_name)
         val ageText: TextView = v.findViewById(R.id.post_pet_age)
@@ -46,6 +50,22 @@ class postFragment : Fragment() {
             .resize(1000, 1000)
             .centerCrop()
             .into(imageView)
+
+        val buttonShelter = v.findViewById<Button>(R.id.post_button_shelter)
+
+        buttonShelter.setOnClickListener{
+            val bundle = Bundle()
+            bundle.putString("email", shelter)
+
+            val activity=v!!.context as AppCompatActivity
+            val shelterProfileFragment = ShelterProfileFragment()
+            shelterProfileFragment.arguments = bundle
+            val fragmentManager: FragmentManager = activity.supportFragmentManager
+            val transaction = fragmentManager.beginTransaction()
+            transaction.replace(R.id.logged_activity,shelterProfileFragment)
+            transaction.addToBackStack(null)
+            transaction.commit()
+        }
 
         return v
     }

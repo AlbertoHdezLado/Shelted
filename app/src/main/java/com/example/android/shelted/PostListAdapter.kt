@@ -64,6 +64,7 @@ class PostListAdapter(options: FirestoreRecyclerOptions<Post>) :
                 bundle.putString("cp", model.cp)
                 bundle.putString("description", model.description)
                 bundle.putString("imagePath", model.path)
+                bundle.putString("shelter", model.shelter)
 
                 val activity=v!!.context as AppCompatActivity
                 val postFragment = postFragment()
