@@ -82,7 +82,7 @@ class LoggedActivity : AppCompatActivity() {
             intArrayOf(-android.R.attr.state_checked))
 
         val colors = intArrayOf(
-            Color.parseColor("#DA417E02"),
+            Color.parseColor("#116B0A"),
             Color.parseColor("#D3D3D3"))
 
         bottom_navigation.itemIconTintList = ColorStateList(states, colors)
